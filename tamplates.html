@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Templates - ThDevr</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #f0f0f0;
+        }
+        header {
+            background: linear-gradient(90deg, #0056b3, #00bfff);
+            padding: 20px;
+            color: white;
+            text-align: center;
+        }
+        h1 {
+            margin: 0;
+        }
+        .container {
+            padding: 20px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+        .card {
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+            overflow: hidden;
+            transition: transform 0.3s;
+        }
+        .card:hover {
+            transform: scale(1.03);
+        }
+        .card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+        .card-content {
+            padding: 15px;
+        }
+        .card-content h2 {
+            margin-top: 0;
+            font-size: 22px;
+        }
+        .card-content p {
+            color: #555;
+        }
+        .buttons {
+            margin-top: 10px;
+        }
+        .buttons a {
+            display: inline-block;
+            padding: 8px 15px;
+            margin-right: 8px;
+            background-color: #00bfff;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: 0.3s;
+        }
+        .buttons a:hover {
+            background-color: #0077a3;
+        }
+        footer {
+            background-color: #0056b3;
+            color: white;
+            text-align: center;
+            padding: 15px;
+            margin-top: 40px;
+        }
+
+        section {
+            padding: 20px;
+            max-width: 9000px;
+            margin: 0 auto;
+        }
+
+        section h2 {
+            font-size: 28px;
+            color: #000000;
+            margin-bottom: 10px;
+        }
+
+        section p {
+            font-size: 16px;
+            line-height: 1.6;
+            color: #333;
+        }
+
+
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Th devr Tamplates</h1>
+        <p>Escolha seu template e comece seu site agora mesmo!</p>
+    </header>
+
+    <section>
+    <h2>Sobre</h2> 
+    <p>Este site apresenta alguns dos modelos de páginas que desenvolvi e que podem servir como base para o seu projeto. Cada template pode ser totalmente personalizado conforme as necessidades da sua empresa — seja em design, conteúdo ou funcionalidades. <br>Se nenhum dos modelos se encaixar no que você procura, posso criar um site exclusivo, desenvolvido do zero e feito especialmente para você.</p>
+    </section>
+    
+    <div class="container">
+
+        <div class="card">
+            <a href="ifinitty-tech/tech.html">
+            <img src="ifinitty-tech/ifinitty-foto.jpg"alt="Template Loja Tech"></a>
+            <div class="card-content">
+                <h2>Loja Ifinitty Tech</h2>
+                <p>Loja desenvolvida com HTML, CSS e JavaScript. Carrinho com localStorage, suporte e sistema de filtros. </p>
+                <p><strong>Site desenvolvido para minha loja online.</strong></p>
+            </div>
+        </div>
+
+        <div class="card">
+            <a href="cardapio/cardapio.html">
+            <img src="cardapio/cardapio.jpg" alt="Template Loja Imports"> </a>
+            <div class="card-content">
+                <h2>Cardápio Online</h2>
+                <p>Cardápio perfeito para restaurantes e lanchonetes. Página inicial e carrinho.</p>
+                <p><strong>Pode ser ajustado conforme as nessecidades</strong></p>
+            </div>
+        </div>
+
+        <div class="card">
+            <a href="portfolios/portfolio.html">
+            <img src="portfolios/Portfólio.jpg" alt="Template Portfólio"></a>
+            <div class="card-content">
+                <h2>Template Portfólio</h2>
+                <p>Portfólio simples e elegante para profissionais ou freelancers. HTML e CSS.</p>
+                <p><strong>Pode ser ajustado conforme as nessecidades</strong></p>
+
+            </div>
+        </div>
+
+    </div>
+
+    <div class="container">
+
+        <div class="card">
+            <a href="advocacia/index.html">
+            <img src="advocacia/empresarial.jpg" alt="advocacia"></a>
+            <div class="card-content">
+                <h2>Site Epresarial</h2>
+                <p>Site que pode ser alterado para lhe agradar e personalizar conforme sua empresa</p>
+                <p><strong>Sujeito a alterações conforme desejado</strong></p>
+            </div>
+        </div>
+
+        <div class="card">
+            <a href="carda-omline/index.html">
+            <img src="carda-omline/card-online.jpg" alt="Cardápio online"> </a>
+            <div class="card-content">
+                <h2>Cardápio Online</h2>
+                <p>Cardápio perfeito para restaurantes e lanchonetes. Página inicial e carrinho onde pode ser feitos pedidos de forma online.</p>
+                <p><strong>Pode ser ajustado conforme as nessecidades</strong></p>
+            </div>
+        </div>
+
+        <div class="card">
+            <a href="conferencia/index.html">
+            <img src="conferencia/conferencia.jpg" alt="Template Portfólio"></a>
+            <div class="card-content">
+                <h2>Template de eventos</h2>
+                <p>Portfólio simples e elegante para divulgar e incentivar seus enventos. Contem html, css e js.
+                </p>
+                <p><strong>Pode ser ajustado conforme as nessecidades</strong></p>
+
+            </div>
+        </div>
+
+    </div>
+    <br>
+    
+    <br><br>
+    <footer>
+        <p>&copy; 2025 Th devr - Todos os direitos reservados</p>
+    </footer>
+
+</body>
+</html>

@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Portfólio de Thiago, desenvolvedor front-end iniciante especializado em HTML, CSS e JavaScript.">
+    <title>Portfólio - Th Devr</title>
+    <style>
+        /* Paleta de cores: Azul escuro marinho (#001F3F) como cor principal, com variações */
+        :root {
+            --cor-principal: #001F3F; /* Azul marinho escuro */
+            --cor-secundaria: #0074D9; /* Azul médio para links/hover */
+            --cor-fundo: #FFFFFF; /* Branco para fundo */
+            --cor-texto: #333333; /* Cinza escuro para texto */
+            --cor-fundo-claro: #F0F8FF; /* Azul muito claro para seções alternadas */
+            --muted: #6B7280; /* Cinza médio para textos secundários */
+            --primary: #001F3F; /* Cor principal para textos/accent */
+            --card-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Sombra para cards */
+            --surface: #F3F4F6; /* Fundo claro para tags/skills */
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--cor-fundo);
+            color: var(--cor-texto);
+            line-height: 1.6;
+        }
+
+        header {
+            background-color: var(--cor-principal);
+            color: white;
+            text-align: center;
+            padding: 2rem 1rem;
+        }
+
+        h1 {
+            margin: 0;
+            font-size: 2.5rem;
+        }
+
+        .subtitulo {
+            font-size: 1.2rem;
+            margin: 0.5rem 0;
+            opacity: 0.9;
+        }
+
+        .apresentacao {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem 1rem;
+            text-align: center;
+            background-color: var(--cor-fundo-claro);
+        }
+
+        .apresentacao p {
+            font-size: 1.1rem;
+            margin: 1rem 0;
+        }
+
+        section {
+            max-width: 800px;
+            margin: 2rem auto;
+            padding: 1rem;
+        }
+
+        h2 {
+            color: var(--cor-principal);
+            border-bottom: 2px solid var(--cor-secundaria);
+            padding-bottom: 0.5rem;
+            text-align: center;
+        }
+
+        .projetos {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1rem;
+        }
+
+        .projeto {
+            background-color: var(--cor-fundo-claro);
+            padding: 1rem;
+            border-radius: 8px;
+            text-align: center;
+            box-shadow: var(--card-shadow);
+            transition: transform 0.3s ease; /* Adicionado para hover suave */
+        }
+
+        .projeto:hover {
+            transform: translateY(-5px); /* Efeito de elevação no hover */
+        }
+
+        .projeto h3 {
+            color: var(--cor-principal);
+            margin-top: 0;
+        }
+
+        .projeto a {
+            color: var(--cor-secundaria);
+            text-decoration: none;
+            font-weight: bold;
+            display: inline-block;
+            margin-top: 0.5rem;
+            padding: 0.5rem 1rem;
+            background-color: var(--cor-principal);
+            color: white;
+            border-radius: 4px;
+            transition: background-color 0.3s;
+        }
+
+        .projeto a:hover {
+            background-color: var(--cor-secundaria);
+        }
+
+        .habilidades {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 1rem;
+            list-style: none;
+            padding: 0;
+        }
+
+        .habilidades li {
+            background-color: var(--cor-principal);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-weight: bold;
+        }
+
+        /* Estilos para Contato (corrigidos e simplificados) */
+        .contact {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 16px;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .input, textarea {
+            width: 100%;
+            padding: 12px;
+            border-radius: 10px;
+            border: 1px solid #e6e9f0;
+            box-sizing: border-box;
+            font-family: inherit;
+        }
+
+        textarea {
+            min-height: 120px;
+            resize: vertical;
+        }
+
+        .btn {
+            padding: 12px 20px;
+            border: none;
+            border-radius: 6px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            text-decoration: none;
+            display: inline-block;
+            text-align: center;
+        }
+
+        .btn-primary {
+            background-color: var(--cor-principal);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background-color: var(--cor-secundaria);
+        }
+
+        .btn-secondary {
+            background-color: #f3f4f6;
+            color: var(--primary);
+            border: 1px solid #e6eefc;
+        }
+
+        .btn-secondary:hover {
+            background-color: #e5e7eb;
+        }
+
+        .muted {
+            color: var(--muted);
+        }
+
+        .small {
+            font-size: 13px;
+        }
+
+        .center {
+            text-align: center;
+        }
+
+        .section-title {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 16px;
+        }
+
+        .section-title h2 {
+            margin: 0;
+            font-size: 18px;
+        }
+
+        .contact-info {
+            margin-top: 12px;
+            font-size: 13px;
+            color: var(--muted);
+            text-align: center;
+        }
+
+        footer {
+            text-align: center;
+            padding: 1rem;
+            background-color: var(--cor-principal);
+            color: white;
+            margin-top: 2rem;
+        }
+
+        /* Responsividade Melhorada */
+        @media (max-width: 600px) {
+            h1 {
+                font-size: 2rem;
+            }
+            .projetos {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+            .habilidades {
+                flex-direction: column;
+                align-items: center;
+                gap: 0.5rem;
+            }
+            .section-title {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 8px;
+            }
+            .contact {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 400px) {
+            .projetos {
+                grid-template-columns: 1fr;
+                padding: 0 0.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Th Devr</h1>
+        <p class="subtitulo">Desenvolvedor Front-End Iniciante | HTML • CSS • JavaScript</p>
+    </header>
+
+    <section class="apresentacao">
+        <p>Sou um desenvolvedor front-end em início de carreira, apaixonado por criar interfaces simples, rápidas e bem estruturadas. Tenho experiência com HTML e CSS, e estou aprendendo cada vez mais sobre JavaScript e boas práticas de design responsivo. Gosto de transformar ideias em sites funcionais e organizados.</p>
+    </section>
+
+    <section id="projetos">
+        <h2>💼 Meus Projetos</h2>
+        <div class="projetos">
+            <div class="projeto">
+                <h3>Site de loja online</h3>
+                <p>Site pessoal bem estruturado, feito com HTML, CSS e JavaScript.</p>
+                <a href="#" target="_blank" rel="noopener noreferrer">👉 Ver projeto</a>
+            </div>
+            <div class="projeto">
+                <h3>Site de Cardápio</h3>
+                <p>Modelo simples de cardápio e responsivo com Html, css e JavaScript.</p>
+                <a href="#" target="_blank" rel="noopener noreferrer">👉 Ver projeto</a>
+            </div>
+            <div class="projeto">
+                <h3>Página de Portfólio</h3>
+                <p>Layout moderno de Portfólio e design bem desenvolvido.</p>
+                <a href="#" target="_blank" rel="noopener noreferrer">👉 Ver projeto</a>
+            </div>
+            <div class="projeto">
+                <h3>Th devr tamplates</h3>
+                <p>Página onde se encontrarão vários templates feito por mim.</p>
+                <a href="#" target="_blank" rel="noopener noreferrer">👉 Ver projeto</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="habilidades">
+        <h2>🧠 Habilidades</h2>
+        <ul class="habilidades">
+            <li>HTML5</li>
+            <li>CSS3</li>
+            <li>Git & GitHub</li>
+            <li>Noções de JavaScript</li>
+            <li>Responsividade (design para celular e PC)</li>
+        </ul>
+    </section>
+
+    <section id="contact">
+        <div class="section-title">
+            <h2>Contato</h2>
+            <div class="small muted">Vamos trabalhar juntos</div>
+        </div>
+        <div class="contact">
+            <form action="mailto:thiago.exemplo@email.com" method="post" enctype="text/plain"> <!-- Substitua pelo seu e-mail real -->
+                <input class="input" type="text" name="nome" placeholder="Seu nome" required aria-label="Seu nome">
+                <input class="input" type="email" name="email" placeholder="Seu email" required aria-label="Seu e-mail">
+                <textarea name="mensagem" placeholder="Mensagem" aria-label="Sua mensagem"></textarea>
+                <div style="display: flex; gap: 8px; margin-top: 8px; flex-wrap: wrap;">
+                    <button class="btn btn-primary" type="submit">Enviar</button>
+                    <a href="https://wa.me/558994041665" class="btn btn-secondary" aria-label="Abrir WhatsApp">WhatsApp</a>
+                </div>
+            </form>
+            <div class="contact-info">
+                <div><strong>E-mail:</strong> thiago.exemplo@email.com</div> <!-- Substitua pelo real -->
+                <div><strong>WhatsApp:</strong> +55 89 9458-0139</div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Th devr - Todos os direitos reservados</p>
+    </footer>
+</body>
+</html>
