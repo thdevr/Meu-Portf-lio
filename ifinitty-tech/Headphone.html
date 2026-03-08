@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="produtos.css">
+    <title>Ifinitty Tech</title>
+    
+    <style>
+        .logo-top-right {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            width: 60px; /* ajuste o tamanho conforme necessário */
+            height: auto;
+            z-index: 1000; /* garante que fique por cima de outros elementos */
+        }
+    </style>
+</head>
+<body>
+    <header class="top-header">
+        <nav class="navbar">
+            <a href="tech.html">Início</a>
+            <a href="Suporte.html">Suporte</a>
+        </nav>
+        <h1 class="site-title">Ifinitty Tech</h1>
+        <a href="tech.html">
+            <img src="logo.jpg" alt="Logo Ifinitty Tech" class="logo">
+        </a>
+    </header>
+    
+
+         <!-- Link para o carrinho -->
+    <a href="carrinho1.html" class="floating-cart" title="Ver carrinho">🛒</a>
+
+
+
+        <div class="container" id="products">
+            <div class="product" data-name="Headphone">
+                <h3>Headphone Bluetooth</h3>
+                <img src="Hadfone.webp" alt="Headphone" style="width: 60%;">
+                <br>
+                <img src="headphoneB.webp" alt="Headphone" style="width: 60%;">
+                
+                <h4>Fone de ouvido Bluetooth Sem Fio Headphone Bluetooth Recarregável P9 Air Top Casual Esportivo</h4>
+                <p> • Bateria prolongada</p>
+                <p> • Atrativo</p>
+                <p> • Ótimo Volume</p>
+                <p> • Tempo de carregamento: Cerca de 2h</p>
+                <p> • Microfone embutido</p>
+                <h3>R$ 58,10</h3>
+    
+                <div class="options">
+                    <label for="color4">Cor:</label>
+                    <select id="color4">
+                        <option value="Preto">Preto</option>
+                        <option value="Branco">Branco</option>
+                    </select>
+                </div>
+                <button onclick="addToCart('Headphone', 58.10, null, document.getElementById('color4').value)">Adicionar ao Carrinho</button>
+
+            </div>
+            </div>
+
+        
+            <script>
+                let cart = JSON.parse(localStorage.getItem("cart")) || [];
+        
+                function addToCart(name, price, size, color) {
+                    cart.push({ name, price, size, color });
+                    localStorage.setItem("cart", JSON.stringify(cart));
+                    alert(`Produto adicionado ao carrinho! Tamanho: ${size}, Cor: ${color}`);
+                }
+        
+                function searchProducts() {
+                    let input = document.getElementById("search").value.toLowerCase();
+                    let products = document.querySelectorAll(".product");
+                    products.forEach(product => {
+                        let name = product.getAttribute("data-name").toLowerCase();
+                        if (name.includes(input)) {
+                            product.style.display = "block";
+                        } else {
+                            product.style.display = "none";
+                        }
+                    });
+                }
+            </script>
+                    <footer style="background-color: #001068; color: white; text-align: center; padding: 20px;">
+                        <p>Siga-nos nas redes sociais:</p>
+                        <a href="https://www.instagram.com/ifinitty_tech" target="_blank" style="margin: 0 10px;">
+                            <img src="https://cdn-icons-png.flaticon.com/512/174/174855.png" alt="Instagram" style="width: 32px; height: 32px;">
+                        </a>
+                        <a href="https://wa.me/558994338863" target="_blank" style="margin: 0 10px;">
+                            <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="WhatsApp" style="width: 32px; height: 32px;">
+                        </a>
+                        <p style="margin-top: 10px;">&copy; 2025 Ifinitty Tech</p>
+                    </footer>
+        </body>
+        </html>

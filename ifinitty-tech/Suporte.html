@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Suporte</title>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        .navbar {
+            background-color: #001068;
+            overflow: hidden;
+        }
+        .navbar a {
+            float: left;
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 14px 20px;
+            text-decoration: none;
+        }
+        .navbar a:hover {
+            background-color: #ddd;
+            color: #001068;
+        }
+        .top-header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background-color: #001068;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px 30px;
+            z-index: 1000;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+        }
+        /* Logo ajustada */
+        .logo {
+            height: 50px;
+            width: 115px;
+            border-radius: 8px;
+            margin-left: 10px;
+            object-fit: contain;
+        }
+
+        /* Título do site */
+        .site-title {
+            margin: 0;
+            font-size: 24px;
+            flex-grow: 1;
+            text-align: center;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        .w3-container {
+            margin-top: 20px;
+        }
+        .w3-input {
+            margin-bottom: 10px;
+        }
+        /* Cabeçalho fixo no topo */
+        .top-header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background-color: #001068;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px 30px;
+            z-index: 1000;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+        }
+        /* Logo ajustada */
+        .logo {
+            height: 60px;
+            width: 145px;
+            border-radius: 8px;
+            margin-left: 10px;
+            object-fit: contain;
+        }
+
+        /* Título do site */
+        .site-title {
+            margin: 0;
+            font-size: 24px;
+            flex-grow: 1;
+            text-align: center;
+        }
+
+
+        /* Adiciona espaço no topo do conteúdo para não ser escondido pelo header fixo */
+        body {
+            padding-top: 80px;
+        }
+        @media (max-width: 600px) {
+            
+            .cart-item {
+                flex-direction: column;
+                align-items: flex-start;
+                padding: 15px;
+            }
+            .cart-item button {
+                margin-top: 10px;
+            }
+            .total {
+                font-size: 18px;
+            }
+            .checkout-btn {
+                font-size: 16px;
+            }
+            .top-header {
+                padding: 10px;
+                height: auto;
+                margin-bottom: 20px;
+            }
+
+            .navbar {
+                position: static; /* remove o fixo pra caber no header */
+                background-color: transparent;
+                gap: 15px;
+            }
+
+            .navbar a {
+                float: none;
+                display: block;
+                width: 100%;
+                padding: 10px 0;
+            }
+
+            .site-title {
+                font-size: 20px;
+                margin: 5px 0;
+            }
+
+            .logo {
+                height: 60px;
+                margin: 5px 0;
+            }
+
+            .search-bar input {
+                width: 90%;
+            }
+
+            .product {
+                width: 90%;
+            }
+            
+
+            body {
+                padding-top: 170px;
+            }
+        }
+        
+    </style>
+</head>
+<body>
+    <header class="top-header">
+        <nav class="navbar">
+            <a href="tech.html">Início</a>
+            <a href="Suporte.html">Suporte</a>
+        </nav>
+        <h1 class="site-title">Ifinitty Tech</h1>
+        <a href="tech.html">
+            <img src="logo-sem.png" alt="Logo Ifinitty Tech" class="logo">
+        </a>
+    </header>
+
+    <!-- Seção de Contato -->
+    <div class="w3-container w3-content w3-padding-64" style="max-width:800px" id="contact">
+        <h2 class="w3-wide w3-center">CONTATO</h2>
+        <p class="w3-opacity w3-center"><i>Informe seu problema aqui</i></p>
+
+        <div class="w3-row w3-padding-32">
+            <!-- Informações de contato -->
+            <div class="w3-col m6 w3-large w3-margin-bottom">
+                <i class="fa fa-map-marker" style="width:30px"></i> Paulistana, PI<br>
+                <i class="fa fa-phone" style="width:30px"></i> Phone: (89) 9 9404-1665<br>
+                <i class="fa fa-envelope" style="width:30px"></i> Email: infinitytech677@gmail.com<br>
+            </div>
+
+            <!-- Formulário de contato -->
+            <div class="w3-col m6">
+                <form onsubmit="enviarParaWhatsApp(event)">
+                    <div class="w3-row-padding" style="margin:0 -16px 8px -16px">
+                        <div class="w3-half">
+                            <input class="w3-input w3-border" type="text" placeholder="Nome" required id="nome">
+                        </div>
+                        <div class="w3-half">
+                            <input class="w3-input w3-border" type="email" placeholder="Email" required id="email">
+                        </div>
+                    </div>
+                    <input class="w3-input w3-border" type="text" placeholder="Mensagem" required id="mensagem">
+                    <button class="w3-button w3-black w3-section w3-right" type="submit">ENVIAR</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Script para enviar dados ao WhatsApp -->
+    <script>
+        function enviarParaWhatsApp(event) {
+            event.preventDefault();
+
+            const nome = document.getElementById('nome').value;
+            const email = document.getElementById('email').value;
+            const mensagem = document.getElementById('mensagem').value;
+
+            const numero = '558994338863';
+            const texto = `versão demo: Olá, meu nome é ${nome}%0AEmail: ${email}%0AMensagem: ${mensagem}`;
+            const url = `https://wa.me/${numero}?text=${texto}`;
+
+            window.open(url, '_blank');
+        }
+    </script>
+</body>
+</html>

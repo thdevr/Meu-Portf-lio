@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carrinho de Compras</title>
+    <link rel="stylesheet" href="carrinho1.css">
+    <style>
+        
+
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        .header {
+            background-color: #001068;
+            color: white;
+            text-align: center;
+            padding: 15px;
+            font-size: 24px;
+        }
+        .container {
+            margin: 20px;
+        }
+        .cart-item {
+            background: white;
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 8px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .cart-item button {
+            background: #dc3545;
+            color: white;
+            border: none;
+            padding: 5px 10px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        .cart-item button:hover {
+            background: #c82333;
+        }
+        .total {
+            font-size: 20px;
+            text-align: right;
+            margin-top: 20px;
+        }
+        .cep-section {
+            margin-top: 20px;
+            text-align: right;
+        }
+        .checkout-btn {
+            display: block;
+            width: 100%;
+            background: #28a745;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            font-size: 18px;
+            text-decoration: none;
+            border-radius: 5px;
+            margin-top: 20px;
+            pointer-events: none;
+            opacity: 0.6;
+        }
+        .checkout-btn:hover {
+            background: #218838;
+        }
+        .empty-cart {
+            text-align: center;
+            font-size: 18px;
+            color: #888;
+            margin-top: 20px;
+        }
+        @media (max-width: 600px) {
+            .header {
+                font-size: 20px;
+            }
+            .cart-item {
+                flex-direction: column;
+                align-items: flex-start;
+                padding: 15px;
+            }
+            .cart-item button {
+                margin-top: 10px;
+            }
+            .total {
+                font-size: 18px;
+            }
+            .checkout-btn {
+                font-size: 16px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="top-header">
+        <nav class="navbar">
+            <a href="tech.html">Início</a>
+            <a href="Suporte.html">Suporte</a>
+        </nav>
+        <h1 class="site-title">Carrinho</h1>
+        <a href="tech.html">
+            <img src="logo.jpg" alt="Logo Ifinitty Tech" class="logo">
+        </a>
+        </header> 
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <div class="container" id="cart-items">
+        <!-- Os itens do carrinho serão exibidos aqui -->
+    </div>
+    <div class="total" id="total-price">Total: R$ 0,00</div>
+
+    <div class="cep-section">
+        <label for="cep">Digite seu CEP:</label>
+        <input type="text" id="cep" placeholder="Ex: 64750-000" oninput="updateFrete()" maxlength="9">
+    </div>
+    
+
+    <a href="Finalizando.html" class="checkout-btn" id="checkout-btn">Finalizar Compra</a>
+
+    <div class="empty-cart" id="empty-cart-message" style="display: none;">
+        Seu carrinho está vazio. Adicione produtos para continuar.
+    </div>
+
+    <script>
+        let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+        function displayCart() {
+            const cartContainer = document.getElementById("cart-items");
+            const checkoutBtn = document.getElementById("checkout-btn");
+            const emptyCartMessage = document.getElementById("empty-cart-message");
+            const cepSelect = document.getElementById("cep");
+
+            cartContainer.innerHTML = "";
+            let totalPrice = 0;
+
+            if (cart.length === 0) {
+                emptyCartMessage.style.display = "block";
+                checkoutBtn.style.display = "none";
+            } else {
+                emptyCartMessage.style.display = "none";
+                checkoutBtn.style.display = "block";
+            }
+
+            cart.forEach((item, index) => {
+                const cartItem = document.createElement("div");
+                cartItem.classList.add("cart-item");
+
+                cartItem.innerHTML = `
+                    <span>${item.name} - R$ ${item.price.toFixed(2)} | Tamanho: ${item.size || '-'} | Cor: ${item.color || '-'}</span>
+                    <button onclick="removeFromCart(${index})">Remover</button>
+                `;
+
+                cartContainer.appendChild(cartItem);
+                totalPrice += item.price;
+            });
+
+            let frete = 0;
+            const cep = cepSelect.value.trim();
+
+            if (cep !== "") {
+                if (cep === "64750-000" || cep === "64755-000") {
+                    frete = 0.00;
+                } else {
+                    frete = 10.00;
+                }
+                checkoutBtn.style.pointerEvents = "auto";
+                checkoutBtn.style.opacity = "1";
+            } else {
+                checkoutBtn.style.pointerEvents = "none";
+                checkoutBtn.style.opacity = "0.6";
+            }
+
+
+            document.getElementById("total-price").innerHTML = `Total: R$ ${(totalPrice + frete).toFixed(2)}`;
+        }
+
+        function removeFromCart(index) {
+            cart.splice(index, 1);
+            localStorage.setItem("cart", JSON.stringify(cart));
+            displayCart();
+        }
+
+        function updateFrete() {
+            displayCart();
+        }
+
+        displayCart();
+    </script>
+</body>
+</html>

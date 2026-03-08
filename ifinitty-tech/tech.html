@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="tech.css">
+    <title>Ifinitty Tech</title>
+    
+    
+</head>
+<body>
+
+        <header class="top-header">
+        <nav class="navbar">
+            <a href="tech.html">Início</a>
+            <a href="Suporte.html">Suporte</a>
+        </nav>
+        <h1 class="site-title">Ifinitty Tech</h1>
+        <a href="tech.html">
+            <img src="logo-sem.png" alt="Logo Ifinitty Tech" class="logo">
+        </a>
+        </header>
+    
+    
+
+    
+    <!-- Barra de busca -->
+    <div class="search-bar">
+        <input type="text" id="search" placeholder="Buscar produtos..." onkeyup="searchProducts()">
+    </div>
+
+    <!-- Link para o carrinho -->
+    <a href="carrinho1.html" class="floating-cart" title="Ver carrinho">🛒</a>
+
+
+    <!-- Lista de produtos -->
+    <div class="container" id="products">
+        <div class="product" data-name="Maquininha">
+            
+            <h3>Maquininha Do Dragão</h3>
+            <a href="Produtos.html">
+                <img src="Maquininha.webp" alt="Maquininha"  style="width:50%">
+            </a>
+            <br>
+            <a href="Produtos.html"> Maquininha do dragão + 3 pentes </a>
+            <h3>R$ 40,00</h3>
+
+
+
+            <button onclick="addToCart('Maquininha', 40)">Adicionar ao Carrinho</button>
+        </div>
+
+        <div class="product" data-name="Fone De Ouvido">
+            <h3>Fone de Ouvido</h3>
+            <a href="Produtos1.html">
+                <img src="Fone.jpg" alt="Fone de Ouvido" style="width: 50%;">
+            </a>
+            <br>
+            <a href="Produtos1.html">Fone Bluetooth TWS</a>
+            <h3>R$ 39,20</h3>
+         
+            
+            <button onclick="addToCart('Fone de Ouvido', 39.20)">Adicionar ao Carrinho</button>
+        </div>
+
+        <div class="product" data-name="Mouse sem fio">
+            <h3>Mouse S/fio com led</h3>
+            <a href="ProdutosM.html">
+            <img src="MouseSfio.webp" alt="Mouse sem fio" style="width: 45%;">
+            </a>
+            <br>
+            <br>
+            <a href="ProdutosM.html">Mouse sem fio com led RGB</a>
+            <h3>R$39,90</h3>
+            
+            <button onclick="addToCart('Mouse sem fio', 39.90)">Adicionar ao Carrinho</button>
+        </div>
+
+        <div class="product" data-name="Suporte">
+                
+                <h3>Suporte Ergonômico</h3>
+                <a href="dobrável.html">
+                    <img src="suporte.webp" alt="Suporte"  style="width:45%">
+                </a>
+                <br>
+                <a href="dobrável.html"> Suporte Ergonômico Dobravel Portátil Celular Ajustável Mesa</a>
+                <h3>R$ 25,30</h3>
+
+
+
+                <button onclick="addToCart('Suporte', 25.30)">Adicionar ao Carrinho</button>
+        </div>
+    </div>
+    <div class="container" id="products">
+        <div class="product" data-name="Relógio Digital">
+            <h3>Relógio Digital</h3>
+            <a href="Relogios.html">
+            <img src="RelogioP.jpg" alt="Relógio Digital" style="width: 69%;"></a>
+            <br>
+            <a href="Relogios.html">Relógio Digital - 3 tipos de cor</a>
+            <h3>R$ 62,40</h3>
+            <!-- Opções de Tamanho e Cor -->
+            <div class="options">
+                <label for="color1">Cor:</label>
+                <select id="color1">
+                    <option value="Preto">Preto</option>
+                    <option value="Rosa">Rosa</option>
+                    <option value="Branco">Branco</option>
+                </select>
+                <!-- Correção sugerida -->
+                <button onclick="addToCart('Relógio Digital', 62.40, null, document.getElementById('color1').value)">Adicionar ao Carrinho</button>
+
+            </div>
+        </div>
+
+        <div class="product" data-name="Smart Watch">
+            <h3>Smart Watch</h3>
+            <a href="Smart.html">
+            <img src="SmartP.jpg" alt="Smart Watch" style="width: 55%;"></a>
+            <br>
+            <a href="Smart.html">Smart Watch T800 - 4 tipos de cor</a>
+            <h3>R$ 75,30</h3>
+            <!-- Opções de Tamanho e Cor -->
+            <div class="options">
+                <label for="color2">Cor:</label>
+                <select id="color2">
+                    <option value="Preto">Preto</option>
+                    <option value="Rosa">Rosa</option>
+                    <option value="Laranja">Laranja</option>
+                    <option value="Branca">Branca</option>
+                </select>
+            </div>
+            <button onclick="addToCart('Smart Watch', 75.30, null, document.getElementById('color2').value)">Adicionar ao Carrinho</button>
+        
+        </div>
+
+        <div class="product" data-name="Relógio Esportivo">
+            <h3>Relógio Esportivo</h3>
+            <a href="esportivo.html">
+            <img src="Resportivo.jpg" alt="Relógio esportivo" style="width: 50%;"></a>
+            <br>
+            <a href="esportivo.html"> Relógio Masculino C-SHOCK Digital Esportivo - 3 tipos de cor</a>
+            <h3>R$ 54,00</h3>
+            <!-- Opções de Tamanho e Cor -->
+            <div class="options">
+                <label for="color3">Cor:</label>
+                <select id="color3">
+                    <option value="Preto">Preto</option>
+                    <option value="Rosa">azul</option>
+                    <option value="Branca">Branca</option>
+                </select>
+            </div>
+            <button onclick="addToCart('Relógio Esportivo', 54, null, document.getElementById('color3').value)">Adicionar ao Carrinho</button>
+        
+        </div>
+        
+        <div class="product" data-name="Headphone">
+                <h3>Headphone Bluetooth</h3>
+                <a href="Headphone.html">
+                <img src="Hadfone.webp" alt="Headphone" style="width: 43%;">
+                </a>
+                <br>
+                <a href="Headphone.html">Headphone Bluetooth Recarregável P9 Air Top Casual Esportivo
+                </a>
+                <h3>R$58,10</h3>
+                <!-- Opções de Tamanho e Cor -->
+                <div class="options">
+                    <label for="color4">Cor:</label>
+                    <select id="color4">
+                        <option value="Preto">Preto</option>
+                        <option value="Branca">Branca</option>
+                    </select>
+                </div>
+                <button onclick="addToCart('Headphone', 58.10, null, document.getElementById('color4').value)">Adicionar ao Carrinho</button>
+            
+                
+        </div>
+        <div class="container" id="products">
+            
+
+            <div class="product" data-name="Fone De Ouvido Esportivo">
+                <h3>Fone Ergonômico</h3>
+                <a href="Fesportivo.html">
+                    <img src="Fesportivo.webp" alt="Fone de Ouvido Esportivo" style="width: 60%;">
+                </a>
+                <br>
+                <a href="Fesportivo.html">Fone Sem fio Bluetooth Tws Design Ergonomico</a>
+                <h3>R$ 56,00</h3>
+                <button onclick="addToCart('Fone de Ouvido Esportivo', 56.00)">Adicionar ao Carrinho</button>
+            </div>
+
+            <div class="product" data-name="Fone Premiun">
+            <h3>Fone Esportivo</h3>
+            <a href="Fpremiun.html">
+            <img src="Fprmiun.webp" alt="Fone Premiun" style="width: 65%;"></a>
+            <br>
+            <a href="Fpremiun.html"> Fone de ouvido Esportivo Design moderno</a>
+            <br>
+            <h3>R$ 75,50</h3>
+        
+            <button onclick="addToCart('Fone Premiun', 75.50)">Adicionar ao Carrinho</button>
+        </div>
+        <div class="product" data-name="Relógio Digital tela Led">
+            <h3>Relógio Digital tela Led</h3>
+            <a href="rled.html">
+            <img src="Rpromoção.webp" alt="Relógio Digital tela Led" style="width: 60%;"></a>
+            <br>
+            <a href="rled.html"> Relógio Digital tela Led</a>
+            <p>
+                <span style="color: #e60026; font-size: 14px; font-weight: bold;"> As cores devem ser verificadas no ato da compra
+                </span>
+            </p>
+            
+            <h3>R$ 23,20</h3>
+            <button onclick="addToCart('Relógio Digital tela Led', 23.20)">Adicionar ao Carrinho</button>
+        </div>
+    </div>
+            
+    </div>
+
+
+    <footer style="background-color: #001068; color: white; text-align: center; padding: 20px;">
+        <p>Siga-nos nas redes sociais:</p>
+        <a href="https://www.instagram.com/ifinitty_tech" target="_blank" style="margin: 0 10px;">
+            <img src="https://cdn-icons-png.flaticon.com/512/174/174855.png" alt="Instagram" style="width: 32px; height: 32px;">
+        </a>
+        <a href="https://wa.me/558994338863" target="_blank" style="margin: 0 10px;">
+            <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="WhatsApp" style="width: 32px; height: 32px;">
+        </a>
+        <p style="margin-top: 10px;">&copy; 2025 Ifinitty Tech</p>
+    </footer>
+    
+
+    <script>
+        let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+        function addToCart(name, price, size, color) {
+            cart.push({ name, price, size, color });
+            localStorage.setItem("cart", JSON.stringify(cart));
+            alert(`Produto adicionado ao carrinho! Tamanho: ${size}, Cor: ${color}`);
+        }
+
+        function searchProducts() {
+            let input = document.getElementById("search").value.toLowerCase();
+            let products = document.querySelectorAll(".product");
+            products.forEach(product => {
+                let name = product.getAttribute("data-name").toLowerCase();
+                if (name.includes(input)) {
+                    product.style.display = "block";
+                } else {
+                    product.style.display = "none";
+                }
+            });
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="produtos.css">
+    <title>Ifinitty Tech</title>
+    
+    <style>
+        footer a img:hover {
+            transform: scale(1.1);
+            transition: 0.3s;
+        }
+        .logo-top-right {
+                    position: absolute;
+                    top: 10px;
+                    right: 10px;
+                    width: 60px; /* ajuste o tamanho conforme necessário */
+                    height: auto;
+                    z-index: 1000; /* garante que fique por cima de outros elementos */
+                }
+    </style>
+</head>
+<body>
+    <header class="top-header">
+        <nav class="navbar">
+            <a href="tech.html">Início</a>
+            <a href="Suporte.html">Suporte</a>
+        </nav>
+        <h1 class="site-title">Ifinitty Tech</h1>
+        <a href="tech.html">
+            <img src="logo.jpg" alt="Logo Ifinitty Tech" class="logo">
+        </a>
+    </header>
+    
+
+         <!-- Link para o carrinho -->
+    <a href="carrinho1.html" class="floating-cart" title="Ver carrinho">🛒</a>
+
+   
+    <div class="container" id="products">
+        <div class="product" data-name="Maquininha">
+            <h3>Maquininha Do Dragão</h3>
+            <img src="Maquininha.webp" alt="Maquininha"  style="width:40%">
+            <br>
+        
+            <h3> Detalhes do Produto:</h3>
+            <p> Desempenho superior, design robusto e cortes precisos para quem exige excelência em cada detalhe.</p>
+
+                <p> 
+                 • Fácil de manusear</p>
+                 <p>• Design moderno e atraente</p>
+                <p>• Bateria de alta duração </p>
+                
+                <h4>Contém:</h4>
+                <p>• 1 máquina profissional </p>
+                <p>• 3 tipos de pentes (1, 2, e 3)</p>
+                <p>• 1 cabo para carregamento (Tipo C)</p>
+                <p> • 1 escova para limpeza
+                </p>
+                <br>
+                
+            <h3>R$ 40,00</h3>
+
+
+
+            <button onclick="addToCart('Maquininha', 40)">Adicionar ao Carrinho</button>
+        </div>
+    </div>
+
+
+    <script>
+        let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+        function addToCart(name, price, size, color) {
+            cart.push({ name, price, size, color });
+            localStorage.setItem("cart", JSON.stringify(cart));
+            alert(`Produto adicionado ao carrinho! Tamanho: ${size}, Cor: ${color}`);
+        }
+
+        function searchProducts() {
+            let input = document.getElementById("search").value.toLowerCase();
+            let products = document.querySelectorAll(".product");
+            products.forEach(product => {
+                let name = product.getAttribute("data-name").toLowerCase();
+                if (name.includes(input)) {
+                    product.style.display = "block";
+                } else {
+                    product.style.display = "none";
+                }
+            });
+        }
+    </script>
+
+        <footer style="background-color: #001068; color: white; text-align: center; padding: 20px;">
+            <p>Siga-nos nas redes sociais:</p>
+            <a href="https://www.instagram.com/ifinitty_tech" target="_blank" style="margin: 0 10px;">
+                <img src="https://cdn-icons-png.flaticon.com/512/174/174855.png" alt="Instagram" style="width: 32px; height: 32px;">
+            </a>
+            <a href="https://wa.me/558994338863" target="_blank" style="margin: 0 10px;">
+                <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="WhatsApp" style="width: 32px; height: 32px;">
+            </a>
+            <p style="margin-top: 10px;">&copy; 2025 Ifinitty Tech</p>
+        </footer>
+
+    </div>
+</body>
+</html>

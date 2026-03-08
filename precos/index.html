@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tabela de Preços - ThDevr</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+
+        :root {
+            --primaria: #0056b3;
+            --secundaria: #00bfff;
+            --fundo: #f0f2f5;
+            --card: #ffffff;
+            --texto: #2d2d2d;
+            --gradiente: linear-gradient(135deg, #0056b3, #00bfff);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: var(--fundo);
+            color: var(--texto);
+            line-height: 1.5;
+        }
+
+        header {
+            background: var(--gradiente);
+            padding: 45px 20px;
+            text-align: center;
+            color: #fff;
+            border-radius: 0 0 20px 20px;
+            box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+        }
+
+        header h1 {
+            font-size: 2.3rem;
+            font-weight: 700;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 40px auto;
+            padding: 20px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+        }
+
+        .card {
+            background: var(--card);
+            padding: 25px;
+            border-radius: 20px;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+            transition: 0.25s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .card::before {
+            content: "";
+            position: absolute;
+            top: -50%; left: -50%;
+            width: 200%; height: 200%;
+            background: var(--gradiente);
+            opacity: 0;
+            transition: 0.4s;
+            transform: rotate(25deg);
+        }
+
+        .card:hover::before {
+            opacity: 0.12;
+        }
+
+        .card:hover {
+            transform: translateY(-6px);
+        }
+
+        .card h2 {
+            margin-bottom: 8px;
+            font-size: 1.4rem;
+            font-weight: 600;
+            color: var(--primaria);
+        }
+
+        .preco {
+            font-size: 1.6rem;
+            font-weight: 700;
+            margin: 10px 0 18px;
+            background: var(--gradiente);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        footer {
+            text-align: center;
+            padding: 30px;
+            margin-top: 40px;
+            color: #444;
+        }
+
+        footer a {
+            color: var(--primaria);
+            font-weight: 600;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Tabela de Preços — ThDevr</h1>
+</header>
+
+<div class="container">
+
+    <div class="card">
+        <h2>Landing Page (1 página)</h2>
+        <div class="preco">R$65 a R$120</div>
+        <p>Ideal para apresentar serviços, promoções, eventos e pequenos negócios com impacto visual. Sites pequenos, simples e básicos</p>
+    </div>
+
+    <div class="card">
+        <h2>Site Pequeno (2–3 páginas)</h2>
+        <div class="preco">R$120 a R$300</div>
+        <p>Estrutura profissional para empresas locais, incluindo Home, Sobre e Contato. </p>
+    </div>
+
+    <div class="card">
+        <h2>Site Completo (4+ páginas)</h2>
+        <div class="preco">R$300+</div>
+        <p>Para negócios com mais conteúdo e organização. Recomendado para sites com mais páginas, por exemplo, carrinho, suporte, botões ou formulários, e outros</p>
+    </div>
+
+    <div class="card">
+        <h2>Ajustes e Melhorias (Manutenção)</h2>
+        <div class="preco">R$20 a R$100+</div>
+        <p>Correções, mudanças de texto, cores, imagens e pequenos reparos.</p>
+    </div>
+
+    <div class="card">
+        <h2>Plano de Manutenção Mensal - Simples</h2>
+        <div class="preco">R$30</div>
+        <p> -Troca de texto
+            -Troca de imagens
+            -Ajustes simples
+            -Suporte básico <br>
+            -Duas alterações no mês</p>
+        </div>
+
+        <div class="card">
+                <h2>Plano de Manutenção Mensal - Premiun</h2>
+                <div class="preco">R$70</div>
+                    <p> -Melhorias de layout
+                        -Atualização de páginas
+                        -Otimização de responsividade
+                        -Quatro alterações no mês
+                    </p>
+                </div>
+
+            </div>
+
+    </div>
+
+    
+
+<footer>
+    Criado por ThDevr</a>
+</footer>
+
+</body>
+</html>

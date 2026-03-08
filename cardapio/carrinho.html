@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Carrinho | Restaurante Sabor</title>
+<link rel="stylesheet" href="cardapio.css" />
+</head>
+<body>
+
+<header>
+  <h1>Seu Carrinho</h1>
+  <a href="cardapio.html">Voltar ao Cardápio</a>
+</header>
+
+<main>
+  <div id="cart-items"></div>
+  <div id="total"></div>
+  <button id="checkout-btn">Finalizar Pedido no WhatsApp</button>
+</main>
+
+<script>
+  const cartItemsDiv = document.getElementById('cart-items');
+  const totalDiv = document.getElementById('total');
+  const checkoutBtn = document.getElementById('checkout-btn');
+
+  let cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+  function renderCart() {
+    if (cart.length === 0) {
+      cartItemsDiv.innerHTML = '<p>Seu carrinho está vazio.</p>';
+      totalDiv.textContent = '';
+      checkoutBtn.style.display = 'none';
+      return;
+    }
+
+    checkoutBtn.style.display = 'inline-block';
+    cartItemsDiv.innerHTML = '';
+
+    let total = 0;
+
+    cart.forEach(item => {
+      const itemTotal = item.price * item.quantity;
+      total += itemTotal;
+
+      const itemElem = document.createElement('div');
+      itemElem.classList.add('item');
+
+      itemElem.innerHTML = `
+        <strong>${item.name}</strong> - R$ ${item.price.toFixed(2)} x ${item.quantity} = R$ ${itemTotal.toFixed(2)}
+        <button class="remove-btn" data-id="${item.id}">Remover</button>
+      `;
+
+      cartItemsDiv.appendChild(itemElem);
+    });
+
+    totalDiv.textContent = `Total: R$ ${total.toFixed(2)}`;
+
+    // Adiciona evento para remover itens
+    document.querySelectorAll('.remove-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const id = btn.dataset.id;
+        cart = cart.filter(i => i.id !== id);
+        localStorage.setItem('cart', JSON.stringify(cart));
+        renderCart();
+      });
+    });
+  }
+
+  renderCart();
+
+  checkoutBtn.addEventListener('click', () => {
+    if (cart.length === 0) {
+      alert('Seu carrinho está vazio!');
+      return;
+    }
+
+    let message = 'Olá! Gostaria de fazer o pedido:%0A';
+
+    cart.forEach(item => {
+      message += `- ${item.name} x${item.quantity}%0A`;
+    });
+
+    const total = cart.reduce((acc, i) => acc + i.price * i.quantity, 0);
+    message += `%0ATotal: R$ ${total.toFixed(2)}%0AObrigado!`;
+
+    const phone = '558999999999'; // Substitua pelo número correto do WhatsApp
+
+    const url = `https://wa.me/${phone}?text=${message}`;
+
+    localStorage.removeItem('cart'); // limpa o carrinho após finalizar
+
+    window.open(url, '_blank');
+  });
+</script>
+
+</body>
+</html>

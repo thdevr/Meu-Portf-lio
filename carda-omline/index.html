@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Restaurante</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <nav class="container">
+      <h1 class="logo">Sabor &amp; Cia</h1>
+      <ul class="menu">
+        <li><a href="#sobre">Sobre</a></li>
+        <li><a href="#cardapio">Cardápio</a></li>
+        <li><a href="#contato">Contato</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!--<section class="hero">
+    <div class="container">
+      <h2>Bem-vindo </h2>
+      <p>Delícias que conquistam seu paladar com qualidade e carinho.</p>
+    </div>
+  </section>-->
+  <br>
+  <section id="sobre" class="sobre container">
+    <h2>Sobre Nós</h2>
+    <p>O Restaurante oferece pratos caseiros preparados com ingredientes frescos e saborosos. Ambiente acolhedor para você e sua família aproveitarem momentos especiais.</p>
+  </section>
+
+  <section id="cardapio" class="cardapio container">
+    <h2>Cardápio</h2>
+    <div class="pratos">
+      <article class="prato" data-nome="Filé à Parmegiana" data-preco="45">
+        <img src="https://via.placeholder.com/300x200?text=Prato+1" alt="Filé à Parmegiana" />
+        <h3>Filé à Parmegiana</h3>
+        <p>Delicioso filé empanado coberto com molho de tomate e queijo gratinado.</p>
+        <span>R$ 45,00</span>
+        <button class="btn-add">Adicionar ao carrinho</button>
+      </article>
+
+      <article class="prato" data-nome="Moqueca Baiana" data-preco="55">
+        <img src="https://via.placeholder.com/300x200?text=Prato+2" alt="Moqueca Baiana" />
+        <h3>Moqueca Baiana</h3>
+        <p>Prato típico com peixe fresco, leite de coco e temperos especiais.</p>
+        <span>R$ 55,00</span>
+        <button class="btn-add">Adicionar ao carrinho</button>
+      </article>
+
+      <article class="prato" data-nome="Risoto de Cogumelos" data-preco="40">
+        <img src="https://via.placeholder.com/300x200?text=Prato+3" alt="Risoto de Cogumelos" />
+        <h3>Risoto de Cogumelos</h3>
+        <p>Risoto cremoso com mix de cogumelos e parmesão.</p>
+        <span>R$ 40,00</span>
+        <button class="btn-add">Adicionar ao carrinho</button>
+      </article>
+    </div>
+  </section>
+
+  <section id="contato" class="contato container">
+    <h2>Contato</h2>
+    <p><strong>Endereço:</strong> Lorem ipsum dolor sit amet.</p>
+    <p><strong>Telefone:</strong> Lorem ipsum dolor sit amet.</p>
+    <a href="">
+      Reservar via WhatsApp
+    </a>
+    <!--"https://wa.me/5511987654321?text=Olá!%20Quero%20fazer%20uma%20reserva%20no%20Restaurante%20Sabor%20%26%20Cia." target="_blank" class="btn-whatsapp">
+      <img src="https://img.icons8.com/ios-filled/24/ffffff/whatsapp.png" alt="WhatsApp Icon" />-->
+
+  </section>
+
+  <footer>
+    <p>&copy; 2025 ThDevr. Todos os direitos reservados.</p>
+  </footer>
+
+  <!-- Carrinho fixo -->
+    <aside id="carrinho">
+        <h3>Carrinho</h3>
+        <ul id="itens-carrinho"></ul>
+        <p id="total">Total: R$ 0,00</p>
+        <button id="btn-limpar">Limpar carrinho</button>
+        <button id="btn-finalizar">Finalizar pedido</button>
+    </aside>
+
+
+  <script src="script.js"></script>
+</body>
+</html>
