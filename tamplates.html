@@ -198,13 +198,14 @@
         <div class="pedido">
           <h2>Transforme sua ideia em um site profissional</h2>
           <div class="cta-row">
-            <a href="https://wa.me/558994041665?text=Olá%20Thiago,%20vim%20pelo%20seu%20portfólio!"
+            <a href="https://wa.me/558994041665?text=Olá,%20Quero%20fazer%20meu%20site!"
               target="_blank" class="btn">
               Fazer pedido
             </a>
           </div>
         </div>
 
+        
     <br><br>
     <div class="wrap">
         <footer>
@@ -214,27 +215,13 @@
     
 
     <script>
-    // Atualiza o ano no rodapé
-    document.getElementById('year').textContent = new Date().getFullYear();
-
-    // Intercepta o envio do formulário e redireciona para WhatsApp
-    document.getElementById('contactForm').addEventListener('submit', function(e) {
-      e.preventDefault(); // Impede o envio padrão (mailto)
-
-      const nome = document.querySelector('input[name="nome"]').value;
-      const email = document.querySelector('input[name="email"]').value;
-      const mensagem = document.querySelector('textarea[name="mensagem"]').value;
-
-      // Monta a mensagem para o WhatsApp
+    // Monta a mensagem para o WhatsApp
       const texto = `Olá! Meu nome é ${nome}, meu email é ${email}. Mensagem: ${mensagem || 'Sem mensagem adicional.'}`;
 
       // Abre o WhatsApp com a mensagem pré-preenchida
       const url = `https://wa.me/558994041665?text=${encodeURIComponent(texto)}`;
       window.open(url, '_blank'); // Abre em nova aba/janela
 
-      // Opcional: Limpa o formulário após o envio
-      this.reset();
-    });
   </script>
 </body>
 </html>
