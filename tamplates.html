@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="tamplates.css">
     <title>Templates - ThDevr</title>
     <style>
         body {
@@ -92,9 +93,7 @@
             color: #333;
         }
 
-        .pedido {
-            text-align: center;
-        }
+        
     
         .btn {
             background: linear-gradient(90deg, #0056b3, #0056b3);
@@ -108,6 +107,131 @@
         .cta-row{
             gap:12px
         }
+        .card-footer{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 15px;
+}
+
+.preco{
+    background: #0077ff;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    padding: 8px 14px;
+    border-radius: 8px;
+}
+
+.botoes{
+    display: flex;
+    gap: 10px;
+}
+
+.btn{
+    text-decoration: none;
+    padding: 8px 14px;
+    border-radius: 6px;
+    font-size: 14px;
+    transition: 0.3s;
+}
+
+.btn.ver{
+    background: #555;
+    color: white;
+}
+
+.btn.ver:hover{
+    background: #333;
+}
+
+.btn.comprar{
+    background: #00b894;
+    color: white;
+}
+
+.btn.comprar:hover{
+    background: #019875;
+}
+
+.pedido{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    max-width: 900px;
+    margin: 80px auto;
+
+    padding: 50px 30px;
+
+    text-align: center;
+
+    background: linear-gradient(135deg, #0066ff, #00c896);
+    border-radius: 16px;
+
+    color: white;
+
+    box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+}
+
+.pedido h2{
+    font-size: 30px;
+    margin-bottom: 25px;
+}
+
+.cta-row{
+    display: flex;
+    justify-content: center;
+}
+
+.pedido .btn{
+    position: relative;
+    display: inline-block;
+
+    background: white;
+    color: #0066ff;
+
+    padding: 14px 30px;
+    font-size: 17px;
+    font-weight: bold;
+
+    border-radius: 8px;
+    text-decoration: none;
+
+    overflow: hidden;
+
+    transition: 0.3s;
+}
+
+.pedido .btn:hover{
+    transform: translateY(-4px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.25);
+}
+
+/* efeito de brilho */
+.pedido .btn::after{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+
+    background: linear-gradient(
+        120deg,
+        transparent,
+        rgba(255,255,255,0.6),
+        transparent
+    );
+
+    transition: 0.6s;
+}
+
+.pedido .btn:hover::after{
+    left: 100%;
+}
+
 
     </style>
 </head>
@@ -124,77 +248,159 @@
     </section>
     
     <div class="container">
-
         <div class="card">
             <a href="ifinitty-tech/tech.html">
-            <img src="ifinitty-tech/ifinitty-foto.jpg"alt="Template Loja Tech"></a>
+                <img src="ifinitty-tech/ifinitty-foto.jpg" alt="Template Loja Tech">
+            </a>
             <div class="card-content">
                 <h2>Loja Ifinitty Tech</h2>
-                <p>Loja desenvolvida com HTML, CSS e JavaScript. Carrinho com localStorage, suporte e sistema de filtros. </p>
-                <p><strong>Site desenvolvido para minha loja online.</strong></p>
+                <p>
+                    Loja desenvolvida com HTML, CSS e JavaScript.
+                    Carrinho com localStorage, suporte e etc.
+                </p>
+                <div class="card-footer">
+                    <span class="preco">R$450</span>
+                    <div class="botoes">
+                        <a href="ifinitty-tech/tech.html" class="btn ver">Ver site</a>
+                        <a href="https://wa.me/558994041665?text=Olá,%20Quero%20fazer%20meu%20site!" class="btn comprar">
+                            Fazer Pedido
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+       
+        <div class="card">
+            <a href="cardapio/cardapio.html">
+                <img src="cardapio/cardapio.jpg" alt="Template Cardápio">
+            </a>
+            <div class="card-content">
+                <h2>Cardápio Online</h2>
+                <p>
+                    Cardápio perfeito para restaurantes e lanchonetes.
+                    Página inicial e carrinho para pedidos.
+                    
+                </p>               
+                <div class="card-footer">
+                    <span class="preco">R$100</span>
+                    <div class="botoes">
+                        <a href="cardapio/cardapio.html" class="btn ver">Ver site</a>
+                        <a href="https://wa.me/558994041665?text=Olá,%20Quero%20um%20site%20de%20cardápio!"
+                        class="btn comprar">
+                        Fazer Pedido
+                        </a>
+                    </div>
+                </div>
             </div>
         </div>
 
-        <div class="card">
-            <a href="cardapio/cardapio.html">
-            <img src="cardapio/cardapio.jpg" alt="Template Loja Imports"> </a>
-            <div class="card-content">
-                <h2>Cardápio Online</h2>
-                <p>Cardápio perfeito para restaurantes e lanchonetes. Página inicial e carrinho.</p>
-                <p><strong>Pode ser ajustado conforme as nessecidades</strong></p>
-            </div>
-        </div>
 
         <div class="card">
             <a href="portfolios/portfolio.html">
-            <img src="portfolios/Portfólio.jpg" alt="Template Portfólio"></a>
+                <img src="portfolios/Portfólio.jpg" alt="Template Portfólio">
+            </a>
             <div class="card-content">
                 <h2>Template Portfólio</h2>
-                <p>Portfólio simples e elegante para profissionais ou freelancers. HTML e CSS.</p>
-                <p><strong>Pode ser ajustado conforme as nessecidades</strong></p>
+                <p>
+                    Portfólio simples e elegante para profissionais ou freelancers.
+                    Desenvolvido com HTML e CSS.
+                </p>
+                <div class="card-footer">
+                    <span class="preco">R$80,00</span>
 
+                    <div class="botoes">
+                        <a href="portfolios/portfolio.html" class="btn ver">Ver site</a>
+
+                        <a href="https://wa.me/558994041665?text=Olá,%20Quero%20um%20site%20de%20portfólio!"
+                        class="btn comprar">
+                        Fazer Pedido
+                        </a>
+                    </div>
+
+                </div>
             </div>
         </div>
 
-    </div>
-
-    <div class="container">
 
         <div class="card">
             <a href="advocacia/index.html">
-            <img src="advocacia/empresarial.jpg" alt="advocacia"></a>
+                <img src="advocacia/empresarial.jpg" alt="Site Empresarial">
+            </a>
+
             <div class="card-content">
-                <h2>Site Epresarial</h2>
-                <p>Site que pode ser alterado para lhe agradar e personalizar conforme sua empresa</p>
-                <p><strong>Sujeito a alterações conforme desejado</strong></p>
+                <h2>Site Empresarial</h2>
+
+                <p>
+                    Site institucional ideal para empresas que desejam presença
+                    profissional na internet.
+                </p>
+
+                <div class="card-footer">
+
+                    <span class="preco">R$70</span>
+
+                    <div class="botoes">
+                        <a href="advocacia/index.html" class="btn ver">Ver site</a>
+
+                        <a href="https://wa.me/558994041665?text=Olá,%20Quero%20um%20site%20empresarial!"
+                        class="btn comprar">
+                        Fazer Pedido
+                        </a>
+                    </div>
+
+                </div>
             </div>
         </div>
+
 
         <div class="card">
             <a href="carda-omline/index.html">
-            <img src="carda-omline/card-online.jpg" alt="Cardápio online"> </a>
+                <img src="carda-omline/card-online.jpg" alt="Cardápio Online">
+            </a>
+
             <div class="card-content">
-                <h2>Cardápio Online</h2>
-                <p>Cardápio perfeito para restaurantes e lanchonetes. Página inicial e carrinho onde pode ser feitos pedidos de forma online.</p>
-                <p><strong>Pode ser ajustado conforme as nessecidades</strong></p>
+                <h2>Cardápio Online com Pedidos</h2>
+                <p>
+                    Cardápio completo com carrinho para realizar pedidos
+                    diretamente pelo site.
+                </p>
+                <div class="card-footer">
+                    <span class="preco">R$140</span>
+                    <div class="botoes">
+                        <a href="carda-omline/index.html" class="btn ver">Ver site</a>
+                        <a href="https://wa.me/558994041665?text=Olá,%20Quero%20um%20cardápio%20online!"
+                        class="btn comprar">
+                        Fazer Pedido
+                        </a>
+                    </div>
+                </div>
             </div>
         </div>
+
 
         <div class="card">
             <a href="conferencia/index.html">
-            <img src="conferencia/conferencia.jpg" alt="Template Portfólio"></a>
+                <img src="conferencia/conferencia.jpg" alt="Template Evento">
+            </a>
             <div class="card-content">
-                <h2>Template de eventos</h2>
-                <p>Portfólio simples e elegante para divulgar e incentivar seus enventos. Contem html, css e js.
+                <h2>Template de Eventos</h2>
+                <p>
+                    Site moderno para divulgar e promover eventos.
+                    Desenvolvido com HTML, CSS e JavaScript.
                 </p>
-                <p><strong>Pode ser ajustado conforme as nessecidades</strong></p>
-
+                <div class="card-footer">
+                    <span class="preco">R$120</span>
+                    <div class="botoes">
+                        <a href="conferencia/index.html" class="btn ver">Ver site</a>
+                        <a href="https://wa.me/558994041665?text=Olá,%20Quero%20um%20site%20de%20eventos!"
+                        class="btn comprar">
+                        Fazer Pedido
+                        </a>
+                    </div>
+                </div>
             </div>
         </div>
-
-    </div>
-    <br>
-       
+</div>
         <div class="pedido">
           <h2>Transforme sua ideia em um site profissional</h2>
           <div class="cta-row">
@@ -204,7 +410,6 @@
             </a>
           </div>
         </div>
-
         
     <br><br>
     <div class="wrap">

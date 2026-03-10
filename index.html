@@ -4,95 +4,12 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Portfólio — Th Devr</title>
+  <link rel="stylesheet" href="style.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
   <style>
-    :root{
-      --bg: #ffffff;
-      --text: #222831;
-      --muted: #677081;
-      --primary: #1e90ff; /* azul vibrante */
-      --primary-600: #1574d6;
-      --surface: #f5f7fb; /* cinza claro */
-      --card-shadow: 0 10px 30px rgba(34,40,49,0.06);
-      --radius: 12px;
-      --glass: rgba(255,255,255,0.6);
-      --accent: #6b7280; /* cinza para detalhes */
-    }
-    *{box-sizing:border-box}
-    html,body{height:100%}
-    body{
-      margin:0;
-      font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
-      background:var(--bg);
-      color:var(--text);
-      -webkit-font-smoothing:antialiased;
-      -moz-osx-font-smoothing:grayscale;
-      line-height:1.5;
-      padding:32px;
-    }
-
-    /* Container */
-    .wrap{max-width:1100px;margin:0 auto}
-
-    /* Header */
-    header{display:flex;align-items:center;justify-content:space-between;margin-bottom:28px}
-    .brand{display:flex;align-items:center;gap:14px}
-    .logo{width:56px;height:56px;border-radius:12px;background:linear-gradient(135deg,var(--primary),var(--primary-600));display:flex;align-items:center;justify-content:center;color:white;font-weight:700;box-shadow:var(--card-shadow)}
-    nav{display:flex;gap:18px;align-items:center}
-    nav a{color:var(--muted);text-decoration:none;font-weight:600}
-    .btn{background:var(--primary);color:#fff;padding:10px 14px;border-radius:10px;text-decoration:none;font-weight:600}
-
-    /* Hero */
-    .hero{display:grid;grid-template-columns:1fr 360px;gap:28px;align-items:center;margin-bottom:36px}
-    .intro h1{font-size:28px;margin:0 0 8px}
-    .intro p{margin:0 0 18px;color:var(--muted)}
-    .cta-row{display:flex;gap:12px}
-    .hero-card{background:var(--surface);padding:18px;border-radius:14px;box-shadow:var(--card-shadow)}
-    .hero-card h3{margin:0 0 8px}
-    .stats{display:flex;gap:12px;margin-top:8px}
-    .stat{background:#fff;padding:10px;border-radius:10px;flex:1;text-align:center;box-shadow:0 6px 18px rgba(34,40,49,0.04)}
-
-    /* Sections */
-    section{margin-bottom:28px}
-    .section-title{display:flex;justify-content:space-between;align-items:center;margin-bottom:16px}
-    .section-title h2{margin:0;font-size:18px}
-    .grid-projects{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
-    .project{background:#fff;border-radius:12px;padding:14px;box-shadow:var(--card-shadow);display:flex;flex-direction:column;gap:12px}
-    .project .thumb{height:140px;border-radius:8px;background:linear-gradient(135deg, rgba(30,144,255,0.12), rgba(21,116,214,0.08));display:flex;align-items:center;justify-content:center;font-weight:700;color:var(--primary)}
-    .tags{display:flex;gap:8px;flex-wrap:wrap}
-    .tag{background:var(--surface);padding:6px 8px;border-radius:8px;font-size:12px;color:var(--muted)}
-
-    /* Skills */
-    .skills{display:flex;gap:12px;flex-wrap:wrap}
-    .skill{padding:10px 12px;border-radius:10px;background:linear-gradient(90deg,var(--surface),#fff);font-weight:600}
-
-    /* Contact */
-    .contact{display:grid;grid-template-columns:1fr 1fr;gap:16px}
-    .input,textarea{width:100%;padding:12px;border-radius:10px;border:1px solid #e6e9f0}
-    textarea{min-height:120px;resize:vertical}
-
-    footer{padding:18px 0;border-top:1px solid #eef2f7;color:var(--muted);text-align:center}
-
-    /* Responsive */
-    @media (max-width:900px){
-      .hero{grid-template-columns:1fr}
-      .grid-projects{grid-template-columns:repeat(2,1fr)}
-      .contact{grid-template-columns:1fr}
-    }
-    @media (max-width:560px){
-      body{padding:18px}
-      .grid-projects{grid-template-columns:1fr}
-      nav{display:none}
-      .logo{width:48px;height:48px}
-      .intro h1{font-size:22px}
-    }
-
-    /* small helpers */
-    .muted{color:var(--muted)}
-    .small{font-size:13px}
-    .center{text-align:center}
+    
 
   </style>
 </head>
