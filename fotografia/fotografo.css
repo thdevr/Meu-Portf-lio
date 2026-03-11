@@ -1,0 +1,156 @@
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Poppins,sans-serif;
+}
+
+body{
+background:#0a0a0a;
+color:white;
+}
+
+header{
+display:flex;
+justify-content:space-between;
+padding:20px 10%;
+position:fixed;
+width:100%;
+background:#0a0a0a;
+z-index:1000;
+}
+
+header h1{
+font-weight:600;
+}
+
+nav a{
+margin-left:25px;
+text-decoration:none;
+color:white;
+font-size:14px;
+opacity:.8;
+}
+
+nav a:hover{
+opacity:1;
+}
+
+.hero{
+height:100vh;
+background:url("https://picsum.photos/1920/1080?grayscale") center/cover no-repeat;
+display:flex;
+align-items:center;
+justify-content:center;
+text-align:center;
+}
+
+.hero-text h2{
+font-size:60px;
+margin-bottom:10px;
+}
+
+.hero-text p{
+opacity:.8;
+margin-bottom:20px;
+}
+
+.btn{
+padding:12px 25px;
+background:white;
+color:black;
+text-decoration:none;
+font-weight:600;
+border-radius:4px;
+}
+
+.section-title{
+text-align:center;
+font-size:40px;
+margin-bottom:40px;
+}
+
+.gallery-section{
+padding:100px 10%;
+}
+
+.gallery-filters{
+text-align:center;
+margin-bottom:30px;
+}
+
+.gallery-filters button{
+margin:5px;
+padding:8px 16px;
+border:none;
+background:#1a1a1a;
+color:white;
+cursor:pointer;
+}
+
+.gallery{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:20px;
+}
+
+.gallery img{
+width:100%;
+height:100%;
+object-fit:cover;
+transition:.4s;
+}
+
+.gallery img:hover{
+transform:scale(1.05);
+}
+
+.about{
+padding:120px 20%;
+text-align:center;
+}
+
+.about h2{
+margin-bottom:20px;
+font-size:40px;
+}
+
+.about p{
+opacity:.8;
+line-height:1.6;
+}
+
+.contact{
+padding:100px 20%;
+text-align:center;
+}
+
+.contact form{
+display:flex;
+flex-direction:column;
+gap:15px;
+margin-top:30px;
+}
+
+.contact input,
+.contact textarea{
+padding:12px;
+border:none;
+background:#1a1a1a;
+color:white;
+}
+
+.contact button{
+padding:12px;
+border:none;
+background:white;
+color:black;
+font-weight:600;
+cursor:pointer;
+}
+
+footer{
+text-align:center;
+padding:30px;
+opacity:.6;
+}

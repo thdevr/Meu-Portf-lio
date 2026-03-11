@@ -1,0 +1,129 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+body {
+    background: #000;
+    color: #fff;
+}
+
+/* Header */
+.header {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 40px;
+    background: #000;
+    border-bottom: 1px solid #333;
+}
+
+.logo {
+    font-size: 24px;
+    letter-spacing: 3px;
+    font-weight: 700;
+    color: #d4af37; /* dourado */
+}
+
+.btn-header {
+    padding: 10px 20px;
+    border: 1px solid #d4af37;
+    color: #d4af37;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: 0.3s;
+}
+
+.btn-header:hover {
+    background: #d4af37;
+    color: #000;
+}
+
+/* Hero section */
+.hero {
+    text-align: center;
+    padding: 120px 20px;
+    background: linear-gradient(to bottom, #000, #111);
+}
+
+.hero h1 {
+    font-size: 48px;
+    margin-bottom: 15px;
+    color: #fff;
+}
+
+.hero p {
+    font-size: 18px;
+    opacity: 0.7;
+    margin-bottom: 20px;
+}
+
+.btn-hero {
+    background: #d4af37;
+    padding: 14px 28px;
+    border-radius: 6px;
+    color: #000;
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.btn-hero:hover {
+    opacity: 0.7;
+}
+
+/* Pratos */
+.pratos {
+    padding: 60px 40px;
+    text-align: center;
+}
+
+.pratos h2 {
+    font-size: 32px;
+    margin-bottom: 30px;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+}
+
+.card {
+    background: #111;
+    border-radius: 10px;
+    padding: 15px;
+}
+
+.card img {
+    width: 100%;
+    border-radius: 10px;
+    margin-bottom: 15px;
+}
+
+/* Info */
+.info {
+    padding: 50px 40px;
+    text-align: center;
+}
+
+.btn-contato {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 12px 25px;
+    background: #d4af37;
+    color: #000;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 20px;
+    background: #000;
+    border-top: 1px solid #333;
+    opacity: 0.7;
+}

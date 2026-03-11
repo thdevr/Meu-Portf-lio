@@ -1,0 +1,116 @@
+/* ======== RESET ======== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* ======== BODY ======== */
+body {
+    background: #f8e8ed; /* rosa nude moderno */
+    font-family: "Poppins", sans-serif;
+    color: #4a3b40;
+}
+
+
+/* ======== HEADER ======== */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 18px 25px;
+    background: white;
+    border-bottom: 3px solid #b88a44;
+}
+
+.logo {
+    color: #b88a44;
+    font-weight: 600;
+    font-size: 26px;
+}
+
+.header nav a {
+    margin-left: 18px;
+    text-decoration: none;
+    color: #7a5c62;
+    font-weight: 500;
+    transition: 0.2s;
+}
+
+.header nav a:hover {
+    color: #b88a44;
+}
+
+
+/* ======== CONTADOR ======== */
+.contador-section {
+    text-align: center;
+    margin-top: 40px;
+}
+
+.timer-box {
+    background: white;
+    border: 2px solid #b88a44;
+    padding: 20px 25px;
+    display: inline-block;
+    border-radius: 12px;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+}
+
+.timer-label {
+    color: #7a5c62;
+    margin-bottom: 7px;
+}
+
+#timer {
+    font-size: 28px;
+    font-weight: bold;
+    color: #b16079;
+}
+
+
+/* ======== BOTÃO WHATSAPP ======== */
+.area-botao {
+    text-align: center;
+    margin-top: 30px;
+}
+
+.btn {
+    background: #b88a44;
+    color: white;
+    padding: 16px 35px;
+    border-radius: 10px;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: 600;
+    animation: pulse 1.4s infinite;
+    display: inline-block;
+    transition: 0.2s;
+}
+
+.btn:hover {
+    transform: scale(1.04);
+}
+
+@keyframes pulse {
+    0% { box-shadow: 0 0 0 0 rgba(184,138,68,0.6); }
+    70% { box-shadow: 0 0 12px 12px rgba(184,138,68,0); }
+    100% { box-shadow: 0 0 0 0 rgba(184,138,68,0); }
+}
+
+
+/* ======== RODAPÉ ======== */
+.footer {
+    margin-top: 50px;
+    text-align: center;
+    padding: 20px 10px;
+}
+
+.footer img {
+    width: 35px;
+}
+
+.footer p {
+    margin-top: 10px;
+    color: #7a5c62;
+}
