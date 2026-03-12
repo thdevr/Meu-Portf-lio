@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>SmileCare Dental</title>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial, Helvetica, sans-serif;
+}
+
+body{
+background:#f9fcff;
+color:#333;
+}
+
+.container{
+width:90%;
+max-width:1200px;
+margin:auto;
+}
+
+/* NAVBAR */
+
+nav{
+background:white;
+box-shadow:0 2px 10px rgba(0,0,0,0.05);
+position:sticky;
+top:0;
+z-index:100;
+}
+
+.nav-content{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:15px 0;
+}
+
+.logo{
+font-size:22px;
+font-weight:bold;
+color:#2fa4ff;
+}
+
+nav ul{
+display:flex;
+list-style:none;
+gap:20px;
+}
+
+nav a{
+text-decoration:none;
+color:#333;
+font-weight:500;
+transition:0.3s;
+}
+
+nav a:hover{
+color:#2fa4ff;
+}
+
+/* HERO */
+
+.hero{
+background:linear-gradient(135deg,#eaf6ff,#ffffff);
+padding:80px 0;
+text-align:center;
+}
+
+.hero h1{
+font-size:40px;
+margin-bottom:10px;
+}
+
+.hero p{
+font-size:18px;
+margin-bottom:30px;
+color:#555;
+}
+
+.btn{
+background:#2fa4ff;
+color:white;
+padding:14px 28px;
+border-radius:30px;
+text-decoration:none;
+font-weight:bold;
+transition:0.3s;
+}
+
+.btn:hover{
+background:#1b8de3;
+}
+
+/* ABOUT */
+
+.about{
+padding:70px 0;
+text-align:center;
+}
+
+.about h2{
+margin-bottom:20px;
+font-size:30px;
+}
+
+.about p{
+max-width:700px;
+margin:auto;
+line-height:1.6;
+color:#555;
+}
+
+/* SERVICES */
+
+.services{
+background:#f1f7ff;
+padding:70px 0;
+}
+
+.services h2{
+text-align:center;
+margin-bottom:40px;
+font-size:30px;
+}
+
+.service-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:25px;
+}
+
+.card{
+background:white;
+padding:30px;
+border-radius:12px;
+text-align:center;
+box-shadow:0 5px 15px rgba(0,0,0,0.05);
+transition:0.3s;
+}
+
+.card:hover{
+transform:translateY(-5px);
+}
+
+.card i{
+font-size:35px;
+color:#2fa4ff;
+margin-bottom:15px;
+}
+
+/* DOCTOR */
+
+.doctor{
+padding:70px 0;
+text-align:center;
+}
+
+.doctor img{
+width:180px;
+border-radius:50%;
+margin-bottom:15px;
+}
+
+.doctor h3{
+margin-bottom:10px;
+}
+
+/* CONTACT */
+
+.contact{
+background:#f1f7ff;
+padding:70px 0;
+text-align:center;
+}
+
+.contact h2{
+margin-bottom:20px;
+}
+
+.contact p{
+margin:8px 0;
+}
+
+/* FOOTER */
+
+footer{
+background:#111;
+color:white;
+text-align:center;
+padding:25px;
+}
+
+footer i{
+margin:0 8px;
+cursor:pointer;
+}
+
+/* WHATSAPP FLOAT */
+
+.whatsapp{
+position:fixed;
+bottom:20px;
+right:20px;
+background:#25D366;
+color:white;
+width:60px;
+height:60px;
+border-radius:50%;
+display:flex;
+align-items:center;
+justify-content:center;
+font-size:30px;
+box-shadow:0 5px 10px rgba(0,0,0,0.2);
+text-decoration:none;
+}
+
+</style>
+
+</head>
+<body>
+
+<!-- NAVBAR -->
+
+<nav>
+<div class="container nav-content">
+
+<div class="logo">SmileCare Dental</div>
+
+<ul>
+<li><a href="#about">About</a></li>
+<li><a href="#services">Services</a></li>
+<li><a href="#doctor">Doctor</a></li>
+<li><a href="#contact">Contact</a></li>
+</ul>
+
+</div>
+</nav>
+
+<!-- HERO -->
+
+<section class="hero">
+
+<div class="container">
+
+<h1>SmileCare Dental</h1>
+
+<p>Healthy Smiles, Professional Care</p>
+
+<a class="btn" href="https://wa.me/558994580139" target="_blank">
+Schedule on WhatsApp
+</a>
+
+</div>
+
+</section>
+
+<!-- ABOUT -->
+
+<section id="about" class="about">
+
+<div class="container">
+
+<h2>About Our Clinic</h2>
+
+<p>
+SmileCare Dental is dedicated to providing high-quality dental care with modern technology and a compassionate approach. Our mission is to help every patient achieve a healthy, confident smile in a comfortable and professional environment.
+</p>
+
+</div>
+
+</section>
+
+<!-- SERVICES -->
+
+<section id="services" class="services">
+
+<div class="container">
+
+<h2>Our Services</h2>
+
+<div class="service-grid">
+
+<div class="card">
+<i class="fa-solid fa-tooth"></i>
+<h3>Teeth Cleaning</h3>
+<p>Professional dental cleaning to maintain oral health.</p>
+</div>
+
+<div class="card">
+<i class="fa-solid fa-star"></i>
+<h3>Whitening</h3>
+<p>Advanced whitening treatments for a brighter smile.</p>
+</div>
+
+<div class="card">
+<i class="fa-solid fa-screwdriver-wrench"></i>
+<h3>Dental Implants</h3>
+<p>Permanent solutions for missing teeth.</p>
+</div>
+
+<div class="card">
+<i class="fa-solid fa-teeth"></i>
+<h3>Orthodontics</h3>
+<p>Modern braces and alignment treatments.</p>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- DOCTOR -->
+
+<section id="doctor" class="doctor">
+
+<div class="container">
+
+<h2>Our Doctor</h2>
+
+<img src="logo.jpeg" alt="Dentist">
+
+<h3>Dr. Sarah Johnson</h3>
+
+<p>
+Experienced dentist dedicated to providing personalized care and helping patients achieve beautiful and healthy smiles.
+</p>
+
+</div>
+
+</section>
+
+<!-- CONTACT -->
+
+<section id="contact" class="contact">
+
+<div class="container">
+
+<h2>Contact Us</h2>
+
+<p><strong>Address:</strong> 123 Main Street</p>
+<p><strong>Phone:</strong> +55 89 9458-0139</p>
+<p><strong>Hours:</strong> Mon - Fri | 8:00 - 18:00</p>
+
+<br>
+
+<a class="btn" href="https://wa.me/558994580139" target="_blank">
+Schedule Appointment
+</a>
+
+</div>
+
+</section>
+
+<!-- FOOTER -->
+
+<footer>
+
+<p>© 2026 SmileCare Dental</p>
+
+<div>
+<i class="fab fa-facebook"></i>
+<i class="fab fa-instagram"></i>
+<i class="fab fa-google"></i>
+</div>
+
+</footer>
+
+<!-- WHATSAPP FLOAT -->
+
+<a class="whatsapp" href="https://wa.me/558994580139" target="_blank">
+<i class="fab fa-whatsapp"></i>
+</a>
+
+</body>
+</html>

@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Prime Homes | Find Your Perfect Home</title>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial, Helvetica, sans-serif;
+}
+
+body{
+background:#f5f7fb;
+color:#333;
+}
+
+.container{
+width:90%;
+max-width:1200px;
+margin:auto;
+}
+
+/* NAV */
+
+nav{
+background:white;
+box-shadow:0 2px 10px rgba(0,0,0,0.05);
+position:sticky;
+top:0;
+z-index:100;
+}
+
+.nav-container{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:15px 0;
+}
+
+.logo{
+font-size:22px;
+font-weight:bold;
+color:#1e4ed8;
+}
+
+nav ul{
+display:flex;
+list-style:none;
+gap:25px;
+}
+
+nav a{
+text-decoration:none;
+color:#333;
+font-weight:500;
+}
+
+/* HERO */
+
+.hero{
+background:linear-gradient(rgba(0,0,0,0.45),rgba(0,0,0,0.45)),
+url("https://images.unsplash.com/photo-1564013799919-ab600027ffc6");
+background-size:cover;
+background-position:center;
+height:80vh;
+display:flex;
+align-items:center;
+color:white;
+}
+
+.hero-content{
+max-width:600px;
+}
+
+.hero h1{
+font-size:48px;
+margin-bottom:10px;
+}
+
+.hero p{
+margin-bottom:25px;
+font-size:18px;
+}
+
+.search-box{
+display:flex;
+gap:10px;
+}
+
+.search-box input{
+flex:1;
+padding:12px;
+border:none;
+border-radius:4px;
+}
+
+.search-box button{
+background:#1e4ed8;
+border:none;
+color:white;
+padding:12px 20px;
+border-radius:4px;
+cursor:pointer;
+}
+
+/* SECTIONS */
+
+section{
+padding:70px 0;
+}
+
+.section-title{
+font-size:28px;
+margin-bottom:40px;
+text-align:center;
+}
+
+/* PROPERTY CARDS */
+
+.properties{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:25px;
+}
+
+.card{
+background:white;
+border-radius:8px;
+overflow:hidden;
+box-shadow:0 4px 12px rgba(0,0,0,0.08);
+transition:0.3s;
+}
+
+.card:hover{
+transform:translateY(-5px);
+}
+
+.card img{
+width:100%;
+height:180px;
+object-fit:cover;
+}
+
+.card-content{
+padding:18px;
+}
+
+.price{
+color:#1e4ed8;
+font-weight:bold;
+margin:6px 0;
+}
+
+.location{
+font-size:14px;
+color:#777;
+}
+
+.card button{
+margin-top:10px;
+background:#25d366;
+border:none;
+color:white;
+padding:10px;
+width:100%;
+border-radius:4px;
+cursor:pointer;
+}
+
+/* CATALOG */
+
+.catalog{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
+gap:25px;
+}
+
+/* ABOUT */
+
+.about{
+background:white;
+text-align:center;
+}
+
+.about p{
+max-width:700px;
+margin:auto;
+color:#555;
+line-height:1.6;
+}
+
+/* CONTACT */
+
+.contact{
+text-align:center;
+}
+
+.contact-info{
+margin-top:20px;
+color:#555;
+}
+
+.contact-btn{
+margin-top:20px;
+display:inline-block;
+background:#25d366;
+color:white;
+padding:12px 25px;
+border-radius:5px;
+text-decoration:none;
+}
+
+/* FOOTER */
+
+footer{
+background:#0f172a;
+color:white;
+text-align:center;
+padding:30px 0;
+margin-top:40px;
+}
+
+footer i{
+margin:0 10px;
+cursor:pointer;
+}
+
+/* FLOAT WHATSAPP */
+
+.whatsapp-float{
+position:fixed;
+bottom:20px;
+right:20px;
+background:#25d366;
+color:white;
+width:55px;
+height:55px;
+display:flex;
+align-items:center;
+justify-content:center;
+border-radius:50%;
+font-size:26px;
+box-shadow:0 4px 12px rgba(0,0,0,0.3);
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- NAV -->
+
+<nav>
+<div class="container nav-container">
+
+<div class="logo">Prime Homes</div>
+
+<ul>
+<li><a href="#">Home</a></li>
+<li><a href="#properties">Properties</a></li>
+<li><a href="#about">About</a></li>
+<li><a href="#contact">Contact</a></li>
+</ul>
+
+</div>
+</nav>
+
+<!-- HERO -->
+
+<section class="hero">
+
+<div class="container hero-content">
+
+<h1>Prime Homes</h1>
+<p>Find Your Perfect Home</p>
+
+<div class="search-box">
+<input type="text" placeholder="Search by city, property or location">
+<button>View Properties</button>
+</div>
+
+</div>
+</section>
+
+<!-- FEATURED -->
+
+<section id="properties">
+
+<div class="container">
+
+<h2 class="section-title">Featured Properties</h2>
+
+<div class="properties">
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c">
+<div class="card-content">
+<h3>Modern Family House</h3>
+<p class="price">$350,000</p>
+<p class="location">Miami, FL</p>
+<p>Beautiful modern house with pool and garden.</p>
+<button onclick="contact()">Contact on WhatsApp</button>
+</div>
+</div>
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1600607687644-c7f34b5e6c4e">
+<div class="card-content">
+<h3>Luxury Apartment</h3>
+<p class="price">$220,000</p>
+<p class="location">New York, NY</p>
+<p>Apartment with skyline views and premium finish.</p>
+<button onclick="contact()">Contact on WhatsApp</button>
+</div>
+</div>
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1568605114967-8130f3a36994">
+<div class="card-content">
+<h3>Cozy Suburban Home</h3>
+<p class="price">$180,000</p>
+<p class="location">Austin, TX</p>
+<p>Perfect home for families in a quiet neighborhood.</p>
+<button onclick="contact()">Contact on WhatsApp</button>
+</div>
+</div>
+
+</div>
+</div>
+</section>
+
+<!-- CATALOG -->
+
+<section>
+
+<div class="container">
+
+<h2 class="section-title">Property Catalog</h2>
+
+<div class="catalog">
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1582407947304-fd86f028f716">
+<div class="card-content">
+<h3>$150,000</h3>
+<p>Los Angeles</p>
+<p>2 Bedrooms • 1 Bathroom</p>
+<button onclick="contact()">Contact</button>
+</div>
+</div>
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1572120360610-d971b9d7767c">
+<div class="card-content">
+<h3>$270,000</h3>
+<p>Chicago</p>
+<p>3 Bedrooms • 2 Bathrooms</p>
+<button onclick="contact()">Contact</button>
+</div>
+</div>
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1560448075-bb485b067938">
+<div class="card-content">
+<h3>$310,000</h3>
+<p>San Diego</p>
+<p>4 Bedrooms • 3 Bathrooms</p>
+<button onclick="contact()">Contact</button>
+</div>
+</div>
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1600047509358-9dc75507daeb">
+<div class="card-content">
+<h3>$190,000</h3>
+<p>Orlando</p>
+<p>3 Bedrooms • 2 Bathrooms</p>
+<button onclick="contact()">Contact</button>
+</div>
+</div>
+
+</div>
+
+</div>
+</section>
+
+<!-- ABOUT -->
+
+<section id="about" class="about">
+
+<div class="container">
+
+<h2 class="section-title">About Prime Homes</h2>
+
+<p>
+Prime Homes is a professional real estate agency helping people find the perfect house or apartment.
+We offer carefully selected properties for sale and rent, with a focus on quality, comfort and great locations.
+Our mission is to make your property search simple, fast and secure.
+</p>
+
+</div>
+</section>
+
+<!-- CONTACT -->
+
+<section id="contact" class="contact">
+
+<div class="container">
+
+<h2 class="section-title">Contact Us</h2>
+
+<div class="contact-info">
+<p>📍 123 Main Street, Miami</p>
+<p>📞 +1 (555) 123-4567</p>
+</div>
+
+<a class="contact-btn" href="https://wa.me/15551234567" target="_blank">
+Chat on WhatsApp
+</a>
+
+</div>
+</section>
+
+<!-- FOOTER -->
+
+<footer>
+
+<p>© 2026 Prime Homes</p>
+
+<div>
+<i class="fab fa-instagram"></i>
+<i class="fab fa-facebook"></i>
+<i class="fab fa-linkedin"></i>
+</div>
+
+</footer>
+
+<!-- FLOATING WHATSAPP -->
+
+<a class="whatsapp-float" href="https://wa.me/15551234567" target="_blank">
+<i class="fab fa-whatsapp"></i>
+</a>
+
+<script>
+
+function contact(){
+window.open("https://wa.me/15551234567","_blank")
+}
+
+</script>
+
+</body>
+</html>

@@ -64,6 +64,24 @@
     textarea{min-height:120px;resize:vertical}
 
     footer{padding:18px 0;border-top:1px solid #eef2f7;color:var(--muted);text-align:center}
+    .social{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 16px; /* espaço entre os ícones */
+    }
+
+    .social a{
+      font-size: 28px;
+      color:#1e90ff;
+      text-decoration: none; /* garante que não aparece underline */
+      display: inline-flex;
+    }
+
+    .social a:hover{
+      color:#0284c7;
+      transform:scale(1.2);
+    }
 
     /* Responsive */
     @media (max-width:900px){

@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>TechFuture 2026</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Poppins;
+}
+
+body{
+background:#070713;
+color:white;
+overflow-x:hidden;
+}
+
+/* NAVBAR */
+
+nav{
+position:fixed;
+width:100%;
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:20px 8%;
+background:rgba(0,0,0,0.4);
+backdrop-filter:blur(10px);
+z-index:999;
+}
+
+nav h2{
+font-family:Orbitron;
+background:linear-gradient(45deg,#4facfe,#a64bfd);
+-webkit-background-clip:text;
+color:transparent;
+}
+
+nav a{
+margin-left:20px;
+text-decoration:none;
+color:white;
+font-size:14px;
+opacity:.8;
+}
+
+nav a:hover{
+opacity:1;
+}
+
+/* HERO */
+
+.hero{
+height:100vh;
+display:flex;
+align-items:center;
+justify-content:center;
+text-align:center;
+flex-direction:column;
+background:radial-gradient(circle at center,#1a1a40,#05050d);
+}
+
+.hero h1{
+font-size:70px;
+font-family:Orbitron;
+background:linear-gradient(90deg,#4facfe,#a64bfd);
+-webkit-background-clip:text;
+color:transparent;
+}
+
+.hero p{
+margin-top:10px;
+opacity:.7;
+}
+
+.btn{
+margin-top:30px;
+padding:14px 35px;
+border-radius:30px;
+border:none;
+font-size:16px;
+cursor:pointer;
+background:linear-gradient(45deg,#4facfe,#a64bfd);
+color:white;
+transition:.3s;
+}
+
+.btn:hover{
+transform:scale(1.08);
+}
+
+/* COUNTDOWN */
+
+.countdown{
+display:flex;
+gap:30px;
+margin-top:40px;
+}
+
+.count{
+background:#12122a;
+padding:20px;
+border-radius:12px;
+width:90px;
+}
+
+.count h2{
+font-size:28px;
+}
+
+/* SECTIONS */
+
+section{
+padding:90px 10%;
+}
+
+.section-title{
+text-align:center;
+margin-bottom:50px;
+font-size:32px;
+}
+
+/* ABOUT */
+
+.about{
+background:#0e0e22;
+text-align:center;
+line-height:1.8;
+}
+
+/* SPEAKERS */
+
+.speakers{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:30px;
+}
+
+.speaker{
+background:#12122a;
+border-radius:15px;
+padding:30px;
+text-align:center;
+transition:.3s;
+}
+
+.speaker:hover{
+transform:translateY(-10px);
+box-shadow:0 0 30px rgba(100,100,255,.3);
+}
+
+.speaker img{
+width:110px;
+height:110px;
+border-radius:50%;
+margin-bottom:15px;
+}
+
+/* SCHEDULE */
+
+.timeline{
+max-width:800px;
+margin:auto;
+display:flex;
+flex-direction:column;
+gap:20px;
+}
+
+.event{
+background:#12122a;
+padding:20px;
+border-left:4px solid #6b6bff;
+border-radius:10px;
+}
+
+/* LOCATION */
+
+.map{
+border-radius:15px;
+overflow:hidden;
+margin-top:20px;
+}
+
+/* REGISTRATION */
+
+.register{
+text-align:center;
+background:linear-gradient(135deg,#1a1c3b,#070713);
+}
+
+/* FOOTER */
+
+footer{
+text-align:center;
+padding:40px;
+background:#05050d;
+opacity:.7;
+}
+
+/* WHATSAPP BUTTON */
+
+.whatsapp{
+position:fixed;
+bottom:20px;
+right:20px;
+background:#25d366;
+color:white;
+padding:15px 18px;
+border-radius:50%;
+font-size:22px;
+cursor:pointer;
+box-shadow:0 0 15px rgba(0,0,0,.3);
+}
+
+/* RESPONSIVE */
+
+@media(max-width:768px){
+
+.hero h1{
+font-size:40px;
+}
+
+.countdown{
+flex-wrap:wrap;
+justify-content:center;
+}
+
+}
+
+</style>
+</head>
+
+<body>
+
+<nav>
+
+<h2>TechFuture</h2>
+
+<div>
+<a href="#about">About</a>
+<a href="#speakers">Speakers</a>
+<a href="#schedule">Schedule</a>
+<a href="#location">Location</a>
+</div>
+
+</nav>
+
+<section class="hero">
+
+<h1>TechFuture 2026</h1>
+<p>June 18–19 • São Paulo • The Future of Technology</p>
+
+<button class="btn" onclick="scrollRegister()">Register Now</button>
+
+<div class="countdown">
+
+<div class="count">
+<h2 id="days">00</h2>
+<p>Days</p>
+</div>
+
+<div class="count">
+<h2 id="hours">00</h2>
+<p>Hours</p>
+</div>
+
+<div class="count">
+<h2 id="minutes">00</h2>
+<p>Minutes</p>
+</div>
+
+<div class="count">
+<h2 id="seconds">00</h2>
+<p>Seconds</p>
+</div>
+
+</div>
+
+</section>
+
+<section id="about" class="about">
+
+<h2 class="section-title">About the Event</h2>
+
+<p>
+TechFuture 2026 is a global technology conference bringing together
+developers, entrepreneurs, and innovators to discuss AI, startups,
+cybersecurity, Web3 and the future of digital transformation.
+</p>
+
+</section>
+
+<section id="speakers">
+
+<h2 class="section-title">Featured Speakers</h2>
+
+<div class="speakers">
+
+<div class="speaker">
+<img src="https://i.pravatar.cc/150?img=32">
+<h3>Sarah Johnson</h3>
+<p>AI Researcher</p>
+</div>
+
+<div class="speaker">
+<img src="https://i.pravatar.cc/150?img=12">
+<h3>Michael Lee</h3>
+<p>Startup Investor</p>
+</div>
+
+<div class="speaker">
+<img src="https://i.pravatar.cc/150?img=45">
+<h3>Daniel Carter</h3>
+<p>Cybersecurity Expert</p>
+</div>
+
+</div>
+
+</section>
+
+<section id="schedule">
+
+<h2 class="section-title">Event Schedule</h2>
+
+<div class="timeline">
+
+<div class="event">
+<strong>09:00</strong> — Opening Keynote
+</div>
+
+<div class="event">
+<strong>11:00</strong> — Future of Artificial Intelligence
+</div>
+
+<div class="event">
+<strong>14:00</strong> — Startup Innovation Panel
+</div>
+
+<div class="event">
+<strong>16:30</strong> — Networking & Closing
+</div>
+
+</div>
+
+</section>
+
+<section id="location">
+
+<h2 class="section-title">Location</h2>
+
+<p style="text-align:center;">Tech Convention Center — São Paulo</p>
+
+<div class="map">
+
+<iframe
+src="https://maps.google.com/maps?q=sao%20paulo&t=&z=13&ie=UTF8&iwloc=&output=embed"
+width="100%"
+height="350">
+</iframe>
+
+</div>
+
+</section>
+
+<section class="register" id="register">
+
+<h2 class="section-title">Register Now</h2>
+
+<p>Reserve your seat and join the future of technology.</p>
+
+<button class="btn" onclick="whatsapp()">Register via WhatsApp</button>
+
+</section>
+
+<footer>
+
+<p>© 2026 TechFuture Conference</p>
+<p>Instagram • LinkedIn • Twitter</p>
+
+</footer>
+
+<div class="whatsapp" onclick="whatsapp()">💬</div>
+
+<script>
+
+function whatsapp(){
+
+let phone="558994580139"
+
+let text="Hello! I would like to register for TechFuture 2026."
+
+let url=`https://wa.me/${phone}?text=${encodeURIComponent(text)}`
+
+window.open(url)
+
+}
+
+/* SCROLL */
+
+function scrollRegister(){
+document.getElementById("register").scrollIntoView({behavior:"smooth"})
+}
+
+/* COUNTDOWN */
+
+const eventDate=new Date("June 18, 2026 09:00:00").getTime()
+
+setInterval(()=>{
+
+let now=new Date().getTime()
+
+let diff=eventDate-now
+
+let days=Math.floor(diff/(1000*60*60*24))
+let hours=Math.floor((diff%(1000*60*60*24))/(1000*60*60))
+let minutes=Math.floor((diff%(1000*60*60))/(1000*60))
+let seconds=Math.floor((diff%(1000*60))/1000)
+
+document.getElementById("days").innerText=days
+document.getElementById("hours").innerText=hours
+document.getElementById("minutes").innerText=minutes
+document.getElementById("seconds").innerText=seconds
+
+},1000)
+
+</script>
+
+</body>
+</html>
