@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LUXURY MENSWEAR | Catálogo Contemporâneo</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <header>
+        <nav class="container">
+            <div class="logo">LUXURY</div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#catalogo">Coleções</a></li>
+                <li><a href="#sobre">Sobre</a></li>
+                <li><a href="#contato">Contato</a></li>
+            </ul>
+            <div class="nav-icons">
+                <span class="search-icon">🔍</span>
+                <div class="cart-wrapper">
+                    <span id="cart-btn">🛒</span>
+                    <span id="cart-count">0</span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <h1>ESSENCE 2026</h1>
+            <p>Redefinindo a elegância masculina com cortes contemporâneos.</p>
+            <a href="#catalogo" class="btn-gold">Explorar Coleção</a>
+        </div>
+    </section>
+
+    <section class="categories container">
+        <div class="cat-card"><span>Camisetas</span></div>
+        <div class="cat-card"><span>Calças</span></div>
+        <div class="cat-card"><span>Acessórios</span></div>
+    </section>
+
+    <main class="container" id="catalogo">
+        <div class="shop-header">
+            <h2>Nossas Peças</h2>
+            <select id="filter">
+                <option value="all">Ordenar por</option>
+                <option value="price-low">Menor Preço</option>
+                <option value="popular">Mais Vendidos</option>
+            </select>
+        </div>
+
+        <div class="product-grid" id="product-grid">
+            <div class="product-card">
+                <div class="product-img" style="background-image: url('https://images.unsplash.com/photo-1598033129183-c4f50c717658?q=80&w=500')"></div>
+                <div class="product-info">
+                    <h3>Camisa Minimalist Black</h3>
+                    <p class="price">R$ 249,00</p>
+                    <button class="add-to-cart">Adicionar ao Carrinho</button>
+                </div>
+            </div>
+            <div class="product-card">
+                <div class="product-img" style="background-image: url('https://images.unsplash.com/photo-1594932224010-75f2a77af997?q=80&w=500')"></div>
+                <div class="product-info">
+                    <h3>Calça Chino Navy</h3>
+                    <p class="price">R$ 389,00</p>
+                    <button class="add-to-cart">Adicionar ao Carrinho</button>
+                </div>
+            </div>
+             <div class="product-card">
+                <div class="product-img" style="background-image: url('https://images.unsplash.com/photo-1617137968427-85924c800a22?q=80&w=500')"></div>
+                <div class="product-info">
+                    <h3>Blazer Modern Grey</h3>
+                    <p class="price">R$ 890,00</p>
+                    <button class="add-to-cart">Adicionar ao Carrinho</button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer id="contato">
+        <div class="container footer-content">
+            <p>&copy; 2026 LUXURY MENSWEAR. Todos os direitos reservados.</p>
+            <div class="socials">
+                <span>Instagram</span> | <span>LinkedIn</span>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

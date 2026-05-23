@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Super Rifa - Formatura 3º Info</title>
+    <style>
+        :root {
+            --primary: #0a192f;
+            --accent: #d4af37;
+            --white: #ffffff;
+            --gray: #f4f4f4;
+            --success: #28a745;
+            --danger: #dc3545;
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: var(--gray);
+            color: var(--primary);
+            scroll-behavior: smooth;
+        }
+
+        /* --- HERO --- */
+        header {
+            background: linear-gradient(rgba(10, 25, 47, 0.85), rgba(10, 25, 47, 0.95)),
+                        url('https://images.unsplash.com/photo-1556742044-3c52d6e88c62?auto=format&fit=crop&q=80&w=1000');
+            background-size: cover;
+            background-position: center;
+            color: var(--white);
+            text-align: center;
+            padding: 100px 20px;
+            border-bottom: 5px solid var(--accent);
+        }
+
+        .hero-content h1 {
+            font-size: clamp(2.5rem, 8vw, 4rem);
+            letter-spacing: 2px;
+            margin-bottom: 10px;
+            color: var(--accent);
+            text-transform: uppercase;
+        }
+
+        .hero-content p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            opacity: 0.9;
+        }
+
+        .prize-box {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border: 1px solid var(--accent);
+            padding: 25px;
+            border-radius: 15px;
+            margin: 0 auto 30px auto;
+            max-width: 500px;
+        }
+
+        .prize-box h2 {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+        }
+
+        .btn-group {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            align-items: center;
+        }
+
+        .btn-main {
+            background: linear-gradient(45deg, #d4af37, #ffd700);
+            color: #000;
+            padding: 15px 40px;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 50px;
+            text-transform: uppercase;
+            transition: var(--transition);
+            width: 250px;
+            display: inline-block;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+        }
+
+        .btn-main:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(212, 175, 55, 0.4);
+            filter: brightness(1.1);
+        }
+
+        .info-extra {
+            margin-top: 30px;
+            font-size: 1rem;
+            background: rgba(0,0,0,0.3);
+            display: inline-block;
+            padding: 10px 20px;
+            border-radius: 8px;
+        }
+
+        .info-extra strong { color: var(--accent); }
+
+        /* --- STATS --- */
+        .stats {
+            background: var(--white);
+            padding: 25px;
+            text-align: center;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        #available-count {
+            color: var(--success);
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+
+        /* --- GRID --- */
+        .raffle-container {
+            max-width: 900px;
+            margin: 50px auto;
+            text-align: center;
+            padding: 0 20px;
+        }
+
+        .grid-numbers {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(65px, 1fr));
+            gap: 12px;
+            margin-top: 30px;
+            justify-content: center;
+        }
+
+        .number-btn {
+            aspect-ratio: 1/1;
+            border-radius: 10px;
+            font-weight: bold;
+            font-size: 1.1rem;
+            cursor: pointer;
+            border: none;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .available {
+            background: var(--success);
+            color: white;
+            box-shadow: 0 4px 0 #1e7e34;
+        }
+
+        .available:hover {
+            transform: translateY(-2px);
+            filter: brightness(1.1);
+        }
+
+        .number-btn:active {
+            transform: translateY(2px);
+            box-shadow: none;
+        }
+
+        .sold {
+            background: #cbd5e0;
+            color: #718096;
+            cursor: not-allowed;
+            position: relative;
+            text-decoration: line-through;
+        }
+
+        .sold::after {
+            content: "X";
+            position: absolute;
+            color: var(--danger);
+            font-size: 1.5rem;
+            opacity: 0.5;
+        }
+
+        /* --- INFO --- */
+        .info-section {
+            background: var(--primary);
+            color: var(--white);
+            padding: 60px 20px;
+            text-align: center;
+        }
+
+        .info-grid {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 40px;
+            margin-top: 30px;
+        }
+
+        .info-item h3 {
+            color: var(--accent);
+            margin-bottom: 8px;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+        }
+
+        footer {
+            background: #050c18;
+            color: rgba(255,255,255,0.6);
+            text-align: center;
+            padding: 30px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+        }
+
+        footer a { color: var(--accent); text-decoration: none; }
+
+        @media (max-width: 600px) {
+            .grid-numbers { grid-template-columns: repeat(5, 1fr); }
+            .info-grid { flex-direction: column; gap: 25px; }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="hero-content">
+        <h1>Super Rifa</h1>
+        <p>Em prol da formatura do 3º ano de informática</p>
+
+        <div class="prize-box">
+            <h2>🎁 1º: iPhone 12</h2>
+            <h2>💸 2º: R$100 no PIX</h2>
+            <p><strong>Apenas R$ 5,00 o número</strong></p>
+        </div>
+
+        <div class="btn-group">
+            <a href="#rifa" class="btn-main">Escolher número</a>
+            <a href="https://wa.me/5589994041665?text=Olá,%20vim%20pela%20rifa!" class="btn-main" target="_blank">Chamar no WhatsApp</a>
+        </div>
+
+        <div class="info-extra">
+            <p>📍 Bloco: <strong>14</strong> | 👤 Vendedor: <strong>Thiago Coutinho</strong></p>
+        </div>
+    </div>
+</header>
+
+<div class="stats">
+    Números Disponíveis: <span id="available-count">0</span> / 25
+    <p style="color:var(--danger); font-weight:bold; margin-top:5px; font-size:0.9rem;">🔥 Garanta o seu antes que acabe!</p>
+</div>
+
+<section id="rifa" class="raffle-container">
+    <h2>Selecione seu número da sorte</h2>
+    <div class="grid-numbers" id="grid"></div>
+</section>
+
+<section class="info-section">
+    <div class="info-grid">
+        <div class="info-item">
+            <h3>📅 Sorteio</h3>
+            <p>22/06/2026</p>
+        </div>
+        <div class="info-item">
+            <h3>💰 Pagamento</h3>
+            <p>Via PIX</p>
+        </div>
+        <div class="info-item">
+            <h3>📱 Contato</h3>
+            <p>(89) 99404-1665</p>
+        </div>
+    </div>
+</section>
+
+<footer>
+    <p>&copy; 2026 - Formatura 3º Ano Informática</p>
+    <p style="margin-top: 10px; font-size: 1.0rem;">
+        Desenvolvido por 
+        <a href="https://thdevr.github.io/Meu-Portf-lio/" target="_blank">Thiago Coutinho</a>
+    </p>
+</footer>
+
+<script>
+    const totalNumeros = 25;
+    const whatsappNumber = "5589994041665";
+    const numerosVendidos = [7]; // Adicionei alguns de exemplo para você ver o efeito
+
+    const grid = document.getElementById("grid");
+    const availableCount = document.getElementById("available-count");
+
+    let disponiveis = 0;
+
+    for (let i = 1; i <= totalNumeros; i++) {
+        const btn = document.createElement("button");
+        btn.innerText = i.toString().padStart(2, '0');
+
+        if (numerosVendidos.includes(i)) {
+            btn.classList.add("number-btn", "sold");
+        } else {
+            btn.classList.add("number-btn", "available");
+            disponiveis++;
+
+            btn.onclick = () => {
+                const mensagem = `Olá! Quero reservar o número ${i} da rifa .`;
+                const url = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(mensagem)}`;
+                window.open(url, "_blank");
+            };
+        }
+
+        grid.appendChild(btn);
+    }
+
+    availableCount.innerText = disponiveis;
+</script>
+
+</body>
+</html>

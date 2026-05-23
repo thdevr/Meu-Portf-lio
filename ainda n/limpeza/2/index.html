@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CleanShop Moderno</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+/* RESET */
+* {margin:0; padding:0; box-sizing:border-box; font-family:'Poppins',sans-serif;}
+body {background:#e8f6f3; color:#7aa5b9; overflow-x:hidden; scroll-behavior:smooth;}
+a {text-decoration:none; color:inherit;}
+
+/* HEADER */
+header {
+  position:fixed; top:0; left:0; width:100%; background:rgba(2,48,71,0.9);
+  display:flex; justify-content:space-between; align-items:center; padding:15px 40px; z-index:1000; backdrop-filter:blur(10px);
+}
+header .logo h1 span {color:#2ec4b6;}
+nav ul {list-style:none; display:flex; gap:25px;}
+nav ul li a {font-weight:600; transition:0.3s;}
+nav ul li a:hover {color:#2ec4b6;}
+
+/* BANNER DIAGONAL */
+.banner {
+  position:relative; height:80vh; display:flex; align-items:center; justify-content:center; text-align:center;
+  background:linear-gradient(135deg,#2ec4b6,#e0fbfc); clip-path: polygon(0 0,100% 0,100% 85%,0% 100%);
+}
+.banner h2 {font-size:3rem; color:#023047; animation:fadeUp 1s ease forwards;}
+.banner p {font-size:1.3rem; margin-top:15px; animation:fadeUp 1.2s ease forwards; opacity:0;}
+@keyframes fadeUp {from{opacity:0; transform:translateY(30px);} to{opacity:1; transform:translateY(0);}}
+
+/* PRODUTOS HORIZONTAL */
+.produtos {padding:80px 20px; background:#f0f6f5; overflow-x:hidden;}
+.produtos h2 {text-align:center; font-size:2.5rem; margin-bottom:30px;}
+.cards-wrapper {
+  display:flex; gap:20px; overflow-x:auto; padding:0 20px;
+  scrollbar-width:none; -ms-overflow-style:none;
+}
+.cards-wrapper::-webkit-scrollbar {display:none;}
+.card {
+  min-width:250px; background:white; border-radius:20px; padding:20px;
+  flex-shrink:0; box-shadow:0 10px 20px rgba(0,0,0,0.15); transform:translateY(50px); opacity:0;
+  transition:0.5s ease;
+}
+.card img {width:100%; border-radius:15px; margin-bottom:15px;}
+.card h3 {margin-bottom:10px;}
+.card p {font-weight:600; margin-bottom:15px;}
+.card button {
+  padding:12px 25px; border:none; background:#023047; color:white; font-weight:bold; border-radius:50px; cursor:pointer;
+  transition:0.4s;
+}
+.card button:hover {background:#2ec4b6; color:#023047; transform:scale(1.05);}
+
+/* SOBRE */
+.sobre {padding:100px 20px; background:#2ec4b6; color:white; clip-path: polygon(0 0,100% 10%,100% 100%,0% 100%); text-align:center;}
+.sobre h2 {font-size:2.5rem; margin-bottom:20px;}
+.sobre p {max-width:700px; margin:auto; line-height:1.6; font-weight:500;}
+
+/* CONTATO */
+.contato {padding:100px 20px; text-align:center;}
+.contato h2 {font-size:2.5rem; margin-bottom:25px;}
+.contato form {display:flex; flex-direction:column; gap:15px; max-width:450px; margin:auto;}
+.contato input, .contato textarea {padding:12px; border-radius:12px; border:1px solid #ccc; font-size:1rem;}
+.contato button {padding:12px; border:none; background:#023047; color:white; font-weight:bold; border-radius:50px; cursor:pointer; transition:0.3s;}
+.contato button:hover {background:#2ec4b6; color:#023047; transform:scale(1.05);}
+
+/* CARRINHO FLUTUANTE */
+#cart-container {
+  position:fixed; right:20px; bottom:20px; width:320px; max-height:420px;
+  background:white; border-radius:20px; padding:20px; box-shadow:0 12px 25px rgba(0,0,0,0.25);
+  overflow-y:auto; z-index:999; transform:translateY(100px); opacity:0; transition:0.5s;
+}
+#cart-container.show {transform:translateY(0); opacity:1;}
+#cart-container h3 {text-align:center; margin-bottom:15px;}
+.carrinho-item {display:flex; justify-content:space-between; margin-bottom:10px;}
+.carrinho-item button {background:#ff0000; border:none; color:white; padding:5px 12px; border-radius:50px; cursor:pointer; transition:0.3s;}
+.carrinho-item button:hover {background:#d90429;}
+
+/* RESPONSIVO */
+@media(max-width:768px){
+  header{flex-direction:column; gap:10px; padding:15px 20px;}
+  .cards-wrapper{flex-wrap:nowrap;}
+  #cart-container{width:90%; right:5%; bottom:10px;}
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="logo"><h1>Clean<span>Shop</span></h1></div>
+  <nav>
+    <ul>
+      <li><a href="#inicio">Início</a></li>
+      <li><a href="#produtos">Produtos</a></li>
+      <li><a href="#sobre">Sobre</a></li>
+      <li><a href="#contato">Contato</a></li>
+    </ul>
+  </nav>
+</header>
+
+<!-- BANNER DIAGONAL -->
+<section id="inicio" class="banner">
+  <div>
+    <h2>Transforme sua Limpeza</h2>
+    <p>Produtos inovadores para deixar sua casa impecável e moderna</p>
+  </div>
+</section>
+
+<!-- PRODUTOS HORIZONTAL -->
+<section id="produtos" class="produtos">
+  <h2>Vitrine de Produtos</h2>
+  <div class="cards-wrapper">
+    <div class="card"><img src="https://i.ibb.co/0f4N7gT/detergente.jpg"><h3>Detergente Líquido</h3><p>R$10,00</p><button onclick="addToCart('Detergente Líquido',10)">Adicionar</button></div>
+    <div class="card"><img src="https://i.ibb.co/qnBRzHk/desinfetante.jpg"><h3>Desinfetante</h3><p>R$15,00</p><button onclick="addToCart('Desinfetante',15)">Adicionar</button></div>
+    <div class="card"><img src="https://i.ibb.co/7rBz9gN/esponja.jpg"><h3>Esponja de Limpeza</h3><p>R$5,00</p><button onclick="addToCart('Esponja de Limpeza',5)">Adicionar</button></div>
+    <div class="card"><img src="https://i.ibb.co/Wnf0p92/limpador.jpg"><h3>Limpador Multiuso</h3><p>R$12,00</p><button onclick="addToCart('Limpador Multiuso',12)">Adicionar</button></div>
+  </div>
+</section>
+
+<!-- SOBRE -->
+<section id="sobre" class="sobre">
+  <h2>Sobre a CleanShop</h2>
+  <p>Na CleanShop, reinventamos a experiência de limpeza. Produtos selecionados, design moderno e soluções que facilitam o dia a dia da sua casa.</p>
+</section>
+
+<!-- CONTATO -->
+<section id="contato" class="contato">
+  <h2>Fale Conosco</h2>
+  <form id="contact-form">
+    <input type="text" id="nome" placeholder="Nome" required>
+    <input type="email" id="email" placeholder="Email" required>
+    <textarea id="mensagem" rows="4" placeholder="Mensagem" required></textarea>
+    <button type="submit">Enviar</button>
+  </form>
+</section>
+
+<!-- CARRINHO FLUTUANTE -->
+<div id="cart-container" class="show">
+  <h3>Carrinho (<span id="cart-count">0</span>)</h3>
+  <div id="cart-items"></div>
+  <h4>Total: R$<span id="cart-total">0</span></h4>
+  <button id="checkout-btn">Finalizar Pedido</button>
+</div>
+
+<script>
+// CARRINHO COM LOCALSTORAGE
+let cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+function updateCartCount(){
+  document.getElementById('cart-count').textContent = cart.length;
+}
+
+function addToCart(name, price){
+  cart.push({name, price});
+  localStorage.setItem('cart', JSON.stringify(cart));
+  loadCartItems(); updateCartCount();
+  alert(name+" adicionado ao carrinho!");
+}
+
+function loadCartItems(){
+  const container = document.getElementById('cart-items');
+  container.innerHTML = '';
+  let total=0;
+  cart.forEach((item,index)=>{
+    total+=item.price;
+    const div=document.createElement('div');
+    div.classList.add('carrinho-item');
+    div.innerHTML=`<span>${item.name} - R$${item.price}</span><button onclick="removeItem(${index})">Remover</button>`;
+    container.appendChild(div);
+  });
+  document.getElementById('cart-total').textContent=total.toFixed(2);
+}
+
+function removeItem(index){
+  cart.splice(index,1);
+  localStorage.setItem('cart',JSON.stringify(cart));
+  loadCartItems(); updateCartCount();
+}
+
+document.getElementById('checkout-btn').addEventListener('click',()=>{
+  if(cart.length===0){alert('Carrinho vazio!'); return;}
+  alert('Pedido finalizado! Total: R$'+cart.reduce((sum,i)=>sum+i.price,0).toFixed(2));
+  cart=[]; localStorage.setItem('cart',JSON.stringify(cart));
+  loadCartItems(); updateCartCount();
+});
+
+// CONTATO
+document.getElementById('contact-form').addEventListener('submit', function(e){
+  e.preventDefault();
+  alert('Mensagem enviada com sucesso!');
+  this.reset();
+});
+
+// animação cards
+const cards = document.querySelectorAll('.card');
+const observer = new IntersectionObserver(entries=>{
+  entries.forEach(entry=>{
+    if(entry.isIntersecting){entry.target.style.opacity='1'; entry.target.style.transform='translateY(0)';}
+  });
+},{threshold:0.3});
+cards.forEach(card=>observer.observe(card));
+
+// Inicializa
+updateCartCount();
+loadCartItems();
+</script>
+</body>
+</html>

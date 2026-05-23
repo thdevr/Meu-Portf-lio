@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CleanHome | Soluções em Limpeza</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --primary: #0077b6; /* Azul Limpeza */
+            --secondary: #00b4d8;
+            --light: #f8f9fa;
+            --dark: #212529;
+            --success: #28a745;
+            --shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        body { background-color: var(--light); color: var(--dark); }
+
+        /* --- HEADER & NAV --- */
+        header {
+            background: #fff;
+            padding: 1rem 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: var(--shadow);
+        }
+
+        .logo { font-weight: 700; font-size: 1.5rem; color: var(--primary); display: flex; align-items: center; gap: 10px; }
+
+        nav ul { display: flex; list-style: none; gap: 20px; }
+        nav a { text-decoration: none; color: var(--dark); font-weight: 500; transition: 0.3s; }
+        nav a:hover { color: var(--primary); }
+
+        .cart-icon { position: relative; cursor: pointer; font-size: 1.2rem; }
+        #cart-count {
+            position: absolute;
+            top: -10px;
+            right: -10px;
+            background: var(--primary);
+            color: #fff;
+            font-size: 0.7rem;
+            padding: 2px 6px;
+            border-radius: 50%;
+        }
+
+        /* --- BANNER --- */
+        .hero {
+            height: 60vh;
+            background: linear-gradient(rgba(0,119,182,0.7), rgba(0,180,216,0.5)), 
+                        url('https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&q=80&w=1470') center/cover;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            text-align: center;
+            margin-top: 70px;
+        }
+
+        .hero h1 { font-size: 3rem; margin-bottom: 10px; }
+
+        /* --- PRODUTOS --- */
+        .container { padding: 4rem 5%; }
+        .section-title { text-align: center; margin-bottom: 3rem; font-size: 2rem; color: var(--primary); }
+
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+
+        .product-card {
+            background: #fff;
+            border-radius: 15px;
+            padding: 20px;
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: var(--shadow);
+        }
+
+        .product-card:hover { transform: translateY(-10px); box-shadow: 0 8px 25px rgba(0,0,0,0.15); }
+        .product-card img { max-width: 100%; border-radius: 10px; height: 180px; object-fit: contain; margin-bottom: 15px; }
+        .product-card h3 { font-size: 1.2rem; margin-bottom: 10px; }
+        .price { color: var(--primary); font-weight: 700; font-size: 1.3rem; margin-bottom: 15px; display: block; }
+
+        .btn-add {
+            background: var(--primary);
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 25px;
+            cursor: pointer;
+            width: 100%;
+            font-weight: 600;
+            transition: 0.3s;
+        }
+
+        .btn-add:hover { background: var(--secondary); }
+
+        /* --- CARRINHO MODAL --- */
+        #cart-modal {
+            position: fixed;
+            right: -100%;
+            top: 0;
+            width: 350px;
+            height: 100%;
+            background: white;
+            box-shadow: -5px 0 15px rgba(0,0,0,0.1);
+            transition: 0.4s;
+            z-index: 2000;
+            padding: 2rem;
+            display: flex;
+            flex-direction: column;
+        }
+
+        #cart-modal.active { right: 0; }
+        .cart-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 10px;
+        }
+        .remove-btn { color: #ff4d4d; cursor: pointer; border: none; background: none; }
+
+        /* --- SOBRE & CONTATO --- */
+        .about-content { max-width: 800px; margin: 0 auto; line-height: 1.8; text-align: center; }
+        
+        .contact-form {
+            max-width: 600px;
+            margin: 0 auto;
+            background: #fff;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: var(--shadow);
+        }
+
+        .contact-form input, .contact-form textarea {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 15px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+        }
+
+        /* --- RESPONSIVIDADE --- */
+        @media (max-width: 768px) {
+            nav ul { display: none; }
+            .hero h1 { font-size: 2rem; }
+            #cart-modal { width: 100%; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo"><i class="fas fa-soap"></i> CleanHome</div>
+        <nav>
+            <ul>
+                <li><a href="#home">Início</a></li>
+                <li><a href="#produtos">Produtos</a></li>
+                <li><a href="#sobre">Sobre</a></li>
+                <li><a href="#contato">Contato</a></li>
+            </ul>
+        </nav>
+        <div class="cart-icon" onclick="toggleCart()">
+            <i class="fas fa-shopping-cart"></i>
+            <span id="cart-count">0</span>
+        </div>
+    </header>
+
+    <section class="hero" id="home">
+        <h1>Tudo Brilhando, Sempre.</h1>
+        <p>As melhores marcas de produtos de limpeza com entrega rápida.</p>
+    </section>
+
+    <section class="container" id="produtos">
+        <h2 class="section-title">Nossos Destaques</h2>
+        <div class="products-grid" id="products-list">
+            </div>
+    </section>
+
+    <section class="container" id="sobre" style="background: #fff;">
+        <h2 class="section-title">Sobre Nós</h2>
+        <div class="about-content">
+            <p>A <strong>CleanHome</strong> nasceu da vontade de simplificar o cuidado com o lar. Desde 2024, oferecemos soluções de alta performance para limpeza residencial e industrial, focando sempre na sustentabilidade e eficiência. Nossa missão é proporcionar um ambiente saudável para você e sua família.</p>
+        </div>
+    </section>
+
+    <section class="container" id="contato">
+        <h2 class="section-title">Fale Conosco</h2>
+        <form class="contact-form" onsubmit="alert('Mensagem enviada com sucesso!'); return false;">
+            <input type="text" placeholder="Seu Nome" required>
+            <input type="email" placeholder="Seu E-mail" required>
+            <textarea placeholder="Sua Mensagem" rows="5" required></textarea>
+            <button type="submit" class="btn-add">Enviar Mensagem</button>
+        </form>
+    </section>
+
+    <div id="cart-modal">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
+            <h3>Seu Carrinho</h3>
+            <i class="fas fa-times" style="cursor: pointer;" onclick="toggleCart()"></i>
+        </div>
+        <div id="cart-items-container" style="flex-grow: 1; overflow-y: auto;">
+            </div>
+        <div style="border-top: 2px solid #eee; padding-top: 20px;">
+            <h4>Total: <span id="cart-total">R$ 0,00</span></h4>
+            <button class="btn-add" style="margin-top: 15px;" onclick="checkout()">Finalizar Pedido</button>
+        </div>
+    </div>
+
+    <script>
+        // Banco de dados de produtos fictício
+        const products = [
+            { id: 1, name: "Detergente Neutro 500ml", price: 5.50, img: "https://images.unsplash.com/photo-1584622781564-1d987f7333c1?w=300" },
+            { id: 2, name: "Desinfetante Lavanda 1L", price: 12.90, img: "https://images.unsplash.com/photo-1583947581924-860bda6a26df?w=300" },
+            { id: 3, name: "Limpador Multiuso", price: 8.75, img: "https://images.unsplash.com/photo-1563453392212-326f5e854473?w=300" },
+            { id: 4, name: "Esponja de Aço (3 un)", price: 4.20, img: "https://images.unsplash.com/photo-1550963295-019d8a8a61c5?w=300" }
+        ];
+
+        let cart = JSON.parse(localStorage.getItem('clean_home_cart')) || [];
+
+        // Inicializar site
+        window.onload = () => {
+            renderProducts();
+            updateCartUI();
+        };
+
+        // Renderizar Cards de Produtos
+        function renderProducts() {
+            const list = document.getElementById('products-list');
+            list.innerHTML = products.map(p => `
+                <div class="product-card">
+                    <img src="${p.img}" alt="${p.name}">
+                    <h3>${p.name}</h3>
+                    <span class="price">R$ ${p.price.toFixed(2).replace('.', ',')}</span>
+                    <button class="btn-add" onclick="addToCart(${p.id})">Adicionar ao Carrinho</button>
+                </div>
+            `).join('');
+        }
+
+        // Funções do Carrinho
+        function toggleCart() {
+            document.getElementById('cart-modal').classList.toggle('active');
+        }
+
+        function addToCart(id) {
+            const product = products.find(p => p.id === id);
+            cart.push(product);
+            saveCart();
+            updateCartUI();
+            
+            // Mensagem de confirmação simples
+            const btn = event.target;
+            const originalText = btn.innerText;
+            btn.innerText = "✓ Adicionado!";
+            btn.style.background = "#28a745";
+            setTimeout(() => {
+                btn.innerText = originalText;
+                btn.style.background = "#0077b6";
+            }, 1500);
+        }
+
+        function removeFromCart(index) {
+            cart.splice(index, 1);
+            saveCart();
+            updateCartUI();
+        }
+
+        function updateCartUI() {
+            const container = document.getElementById('cart-items-container');
+            const countLabel = document.getElementById('cart-count');
+            const totalLabel = document.getElementById('cart-total');
+
+            countLabel.innerText = cart.length;
+            
+            let total = 0;
+            container.innerHTML = cart.map((item, index) => {
+                total += item.price;
+                return `
+                    <div class="cart-item">
+                        <div>
+                            <p style="font-weight:600">${item.name}</p>
+                            <small>R$ ${item.price.toFixed(2)}</small>
+                        </div>
+                        <button class="remove-btn" onclick="removeFromCart(${index})"><i class="fas fa-trash"></i></button>
+                    </div>
+                `;
+            }).join('');
+
+            if(cart.length === 0) container.innerHTML = "<p>Seu carrinho está vazio.</p>";
+            totalLabel.innerText = `R$ ${total.toFixed(2).replace('.', ',')}`;
+        }
+
+        function saveCart() {
+            localStorage.setItem('clean_home_cart', JSON.stringify(cart));
+        }
+
+        function checkout() {
+            if(cart.length === 0) return alert("Seu carrinho está vazio!");
+            const total = cart.reduce((acc, curr) => acc + curr.price, 0);
+            alert(`Resumo do Pedido:\nItens: ${cart.length}\nTotal: R$ ${total.toFixed(2)}\n\nObrigado por comprar na CleanHome!`);
+            cart = [];
+            saveCart();
+            updateCartUI();
+            toggleCart();
+        }
+    </script>
+</body>
+</html>
